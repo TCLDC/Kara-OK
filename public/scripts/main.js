@@ -19,6 +19,7 @@ karaOK.init = function () {
 
 karaOK.eventHandlers = function () {
 
+
 	// 1. Receive user input.
 	$('form').on('submit', function (event) {
 
