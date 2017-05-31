@@ -17,5 +17,8 @@
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0",
     "sync": "^0.2.5"
+  },
+  "dependencies": {
+    "bad-language-filter": "^1.0.2"
   }
 }
