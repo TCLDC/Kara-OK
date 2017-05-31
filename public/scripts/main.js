@@ -1,4 +1,4 @@
-
+'use strict';
 
 // 4. Display API request results on screen
 // 	(track_id, track_name, explicit, album_name, artist_name, album_coverart_100x100, track_share_url)
@@ -13,14 +13,14 @@ var karaOK = {};
 
 karaOK.apikey = '12b27a829caf5c2fbc15751c5a1609d1';
 
-karaOK.init = function() {
+karaOK.init = function () {
 	karaOK.eventHandlers();
-}
+};
 
 karaOK.eventHandlers = function () {
 
 	// 1. Receive user input.
-	$('form').on('submit', function(event) {
+	$('form').on('submit', function (event) {
 
 		event.preventDefault();
 		var userTrackName = $('.trackName').val();
@@ -31,8 +31,7 @@ karaOK.eventHandlers = function () {
 
 		console.log(userArtistName);
 	});
-
-}
+};
 
 // 2. Use user input to make API request/AJAX request.
 // 3. Filter the results (ie search by lyrics only, language, format etc)
@@ -49,11 +48,11 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 			format: 'jsonp',
 			page_size: 100
 		}
-	}).then(function (result){
+	}).then(function (result) {
 
-		var trackList = result.message.body.track_list
+		var trackList = result.message.body.track_list;
 
-		trackList.forEach(function(track) {
+		trackList.forEach(function (track) {
 			var galleryUnit = $('<li>').addClass('galleryUnit');
 
 			var coverArt = $('<img>').attr('src', track.track.album_coverart_100x100);
@@ -64,16 +63,13 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 			var lyricsId = track.track.lyrics_id;
 
 			galleryUnit.append(coverArt, trackName, artistName, albumName);
-			galleryUnit.data('lyrics-id', lyricsId)
+			galleryUnit.data('lyrics-id', lyricsId);
 
 			$('.songGallery').append(galleryUnit);
-
 		});
-
 	});
-}
+};
 
-$(function(){
+$(function () {
 	karaOK.init();
 });
-
