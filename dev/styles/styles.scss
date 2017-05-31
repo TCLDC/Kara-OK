@@ -1,0 +1,17 @@
+@import 'partials/setup';
+@import 'partials/typography';
+@import 'partials/variables';
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	font-size:1.8rem;
+	font-family: $bodyFont;
+}
+
+h1, h2, h3, h4{
+	font-family: $titleFont;
+	color:$mainIdentityColor;
+}
