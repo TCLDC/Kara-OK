@@ -36,6 +36,11 @@ karaOK.apikey = '12b27a829caf5c2fbc15751c5a1609d1';
 
 karaOK.init = function () {
 	karaOK.eventHandlers();
+	karaOK.fullPage();
+};
+
+karaOK.fullPage = function () {
+	$('#fullpage').fullpage();
 };
 
 karaOK.eventHandlers = function () {
@@ -114,9 +119,13 @@ karaOK.getLyrics = function (trackId) {
 			format: 'jsonp'
 		}
 	}).then(function (result) {
+<<<<<<< HEAD
+		var lyrics = result;
+=======
 		console.log(result);
 		var lyrics = result.message.body.lyrics.lyrics_body;
 		console.log(lyrics);
+>>>>>>> 93650d1c2ca8f9febbb5472ab44122fa944f0758
 	});
 };
 
