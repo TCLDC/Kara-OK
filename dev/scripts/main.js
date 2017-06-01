@@ -21,9 +21,6 @@ var config = {
 firebase.initializeApp(config);
 
 //bad language filter
-
-
-
 var filter = new BadLanguageFilter();
 
 karaOK.init = function() {
@@ -56,8 +53,28 @@ karaOK.eventHandlers = function () {
 	$('.songGallery').on('click', '.galleryUnit', function (){
 
 		var trackID = $(this).data('track-id');
+
+		karaOK.selectedAlbumName = $(this).find("h4").text();
+		karaOK.selectedArtistName = $(this).find("h3").text();
+		karaOK.selectedTrackName = $(this).find("h2").text();
+		// console.log(this);
+		// console.log(selectedAlbumName, selectedArtistName, selectedTrackName);
+
 		karaOK.getLyrics(trackID);
 
+
+	});
+
+	$("#addToPlaylist").on("click", function(){
+		var playlistAlbum = $("<h4>").text(karaOK.selectedAlbumName);
+		var playlistArtist = $("<h3>").text(karaOK.selectedArtistName); 
+		var playlistTrack = $("<h2>").text(karaOK.selectedTrackName);
+
+		var playListItem = $("<li>").append(playlistTrack, playlistArtist, playlistAlbum);
+
+		$(".safePlayList").append(playListItem);
+
+		console.log(playListItem);
 	})
 
 }
@@ -89,7 +106,7 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 			var galleryUnit = $('<li>').addClass('galleryUnit');
 
 			var coverArt = $('<img>').attr('src', track.track.album_coverart_100x100);
-			var albumName = $('<h3>').text(track.track.album_name);
+			var albumName = $('<h4>').text(track.track.album_name);
 			var artistName = $('<h3>').text(track.track.artist_name);
 			var trackName = $('<h2>').text(track.track.track_name);
 
@@ -97,8 +114,9 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 
 			galleryUnit.data('track-id', trackId);
 			galleryUnit.append(coverArt, trackName, artistName, albumName);
-
+			// var galleryUnitFinal = galleryUnit.append(coverArt, trackName, artistName, albumName);
 			$('.songGallery').append(galleryUnit);
+			// $('.songGallery').append(galleryUnitFinal);
 
 		});
 
@@ -117,7 +135,7 @@ karaOK.getLyrics = function (trackId) {
 			format: 'jsonp'
 		}
 	}).then(function(result){
-		console.log(result);
+		// console.log(result);
 		var lyrics = result.message.body.lyrics.lyrics_body;
 		console.log(lyrics);
 
@@ -131,9 +149,15 @@ karaOK.getLyrics = function (trackId) {
 		} else if (filterSwear === false) {
 			$('.modalYes').addClass('modalDisplay');
 		}
-	});	
 
+		
+
+	});	
 }
+
+karaOK.addToPlaylist = function(){
+
+};
 
 $(function(){
 	karaOK.init();
