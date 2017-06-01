@@ -9,6 +9,21 @@ var karaOK = {};
 
 karaOK.apikey = '12b27a829caf5c2fbc15751c5a1609d1';
 
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyBAP55s9YMfd4ue2H8JIctue4KVHRMaEno",
+  authDomain: "kara-ok-c94d8.firebaseapp.com",
+  databaseURL: "https://kara-ok-c94d8.firebaseio.com",
+  projectId: "kara-ok-c94d8",
+  storageBucket: "kara-ok-c94d8.appspot.com",
+  messagingSenderId: "1012112286204"
+};
+firebase.initializeApp(config);
+
+//bad language filter
+
+
+
 var filter = new BadLanguageFilter();
 
 karaOK.init = function() {
@@ -112,9 +127,9 @@ karaOK.getLyrics = function (trackId) {
 		console.log(filterSwear);
 
 		if (filterSwear === true) {
-			$('.modalYes').addClass('modalDisplay');
-		} else if (filterSwear === false) {
 			$('.modalNo').addClass('modalDisplay');
+		} else if (filterSwear === false) {
+			$('.modalYes').addClass('modalDisplay');
 		}
 	});	
 
