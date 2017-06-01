@@ -17,7 +17,9 @@ karaOK.init = function() {
 }
 
 karaOK.fullPage = function() {
-	$('#fullpage').fullpage();
+	$('#fullpage').fullpage({
+		sectionsColor: ['#65C5DF', '#004E7B', '#65C5DF', '#004E7B'],
+	});
 }
 
 karaOK.eventHandlers = function () {
