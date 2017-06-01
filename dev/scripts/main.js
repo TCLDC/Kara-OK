@@ -1,5 +1,5 @@
-// 5. Receive user selection.
-// 6. Make API request to track.lyrics.get, 
+import BadLanguageFilter from 'bad-language-filter';
+
 // 7. Use javascript filter to scan the lyrics for profanity.
 // 8. IF there is profanity display red + feedback
 // 9. IF ELSE display green + feedback
@@ -8,6 +8,24 @@
 var karaOK = {};
 
 karaOK.apikey = '12b27a829caf5c2fbc15751c5a1609d1';
+
+		// <========= FILTER BAD WORDS ==========>
+
+// var fs = require('fs');
+// var badwords = require('./badwords.json').badwords;
+// var TextFinder = require('./textfinder');
+
+// // Constructor
+// function BadLanguageFilter() {
+// 	this.textfinder = new TextFinder(badwords);
+// }
+
+// // Check if any bad words is contained in content
+// BadLanguageFilter.prototype.contains = function(content) {
+// 	return this.textfinder.contains(content);
+// };
+
+		// <========= FILTER BAD WORDS ==========>
 
 karaOK.init = function() {
 	karaOK.eventHandlers();
@@ -33,9 +51,10 @@ karaOK.eventHandlers = function () {
 		console.log(userArtistName);
 	});
 
+	// 5. Receive user selection.
 	$('.songGallery').on('click', '.galleryUnit', function (){
 
-		var trackID = $(this).data('lyrics-id');
+		var trackID = $(this).data('track-id');
 		karaOK.getLyrics(trackID);
 
 	})
@@ -65,6 +84,7 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 		var trackList = result.message.body.track_list
 
 		trackList.forEach(function(track) {
+
 			var galleryUnit = $('<li>').addClass('galleryUnit');
 
 			var coverArt = $('<img>').attr('src', track.track.album_coverart_100x100);
@@ -84,6 +104,7 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 	});
 }
 
+// 6. Make API request to track.lyrics.get, 
 karaOK.getLyrics = function (trackId) {
 	$.ajax({
 		url: 'http://api.musixmatch.com/ws/1.1/track.lyrics.get',
@@ -95,8 +116,10 @@ karaOK.getLyrics = function (trackId) {
 			format: 'jsonp'
 		}
 	}).then(function(result){
-		var lyrics = result;
-	});
+		console.log(result);
+		var lyrics = result.message.body.lyrics.lyrics_body;
+		console.log(lyrics);
+	});	
 
 }
 
