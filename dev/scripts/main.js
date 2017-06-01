@@ -105,11 +105,14 @@ karaOK.getLyrics = function (trackId) {
 		console.log(lyrics);
 
 		// 7. Use javascript filter to scan the lyrics for profanity.
+		var filterSwear = '';
 		var filterSwear = filter.contains(lyrics);
 		console.log(filterSwear);
 
 		if (filterSwear === true) {
-
+			$('.modalYes').addClass('modalDisplay');
+		} else if (filterSwear === false) {
+			$('.modalNo').addClass('modalDisplay');
 		}
 	});	
 
