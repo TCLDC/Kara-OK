@@ -1,6 +1,6 @@
 import BadLanguageFilter from 'bad-language-filter';
 
-// 7. Use javascript filter to scan the lyrics for profanity.
+
 // 8. IF there is profanity display red + feedback
 // 9. IF ELSE display green + feedback
 // 10. Allow user to save song to playlist
@@ -9,23 +9,7 @@ var karaOK = {};
 
 karaOK.apikey = '12b27a829caf5c2fbc15751c5a1609d1';
 
-		// <========= FILTER BAD WORDS ==========>
-
-// var fs = require('fs');
-// var badwords = require('./badwords.json').badwords;
-// var TextFinder = require('./textfinder');
-
-// // Constructor
-// function BadLanguageFilter() {
-// 	this.textfinder = new TextFinder(badwords);
-// }
-
-// // Check if any bad words is contained in content
-// BadLanguageFilter.prototype.contains = function(content) {
-// 	return this.textfinder.contains(content);
-// };
-
-		// <========= FILTER BAD WORDS ==========>
+var filter = new BadLanguageFilter();
 
 karaOK.init = function() {
 	karaOK.eventHandlers();
@@ -119,6 +103,14 @@ karaOK.getLyrics = function (trackId) {
 		console.log(result);
 		var lyrics = result.message.body.lyrics.lyrics_body;
 		console.log(lyrics);
+
+		// 7. Use javascript filter to scan the lyrics for profanity.
+		var filterSwear = filter.contains(lyrics);
+		console.log(filterSwear);
+
+		if (filterSwear === true) {
+
+		}
 	});	
 
 }
