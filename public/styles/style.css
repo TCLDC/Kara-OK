@@ -141,3 +141,16 @@ body {
 h1, h2, h3, h4 {
   font-family: "Oswald", sans-serif;
   color: #F0C31A; }
+
+.modal {
+  background-color: red;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 70%;
+  height: 50%; }
+
+.modalDisplay {
+  display: block; }
