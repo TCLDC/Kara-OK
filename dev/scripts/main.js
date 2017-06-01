@@ -20,6 +20,10 @@ var config = {
 };
 firebase.initializeApp(config);
 
+const playlistRef = firebase.database().ref('/playlist');
+
+playlistRef.push('new music');
+
 //bad language filter
 var filter = new BadLanguageFilter();
 
@@ -75,6 +79,8 @@ karaOK.eventHandlers = function () {
 		$(".safePlayList").append(playListItem);
 
 		console.log(playListItem);
+
+		playlistRef.push(karaOK.selectedAlbumName, karaOK.selectedArtistName, karaOK.selectedTrackName);
 	})
 
 }
