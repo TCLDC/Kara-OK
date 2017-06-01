@@ -49,18 +49,22 @@
 		<section class="section results" data-anchor="slide4">
 			<div class="wrapper">
 				<div class="wrapper">
-					<div class="modal modalYes">
-						<h2>YES</h2>
+					<div class="modal modalYes"><!--yes it's explicit-->
+						<h2>Kara OK</h2>
 					</div>
-					<div class="modal modalNo">
-						<h2>NO</h2>
+					<div class="modal modalNo"><!--No it's SFW-->
+						<h2>Kara NO-K</h2>
+						<button class="resultsButton" id="addToPlaylist">Add to OK List</button>
 					</div>
 				</div>
 			</div>
 		</section>
 
 		<section class="section firebasePlaylist" data-anchor="slide5">
-			
+			<h3>Kara-OK List</h3>
+			<ul class="safePlayList">
+				<!--song selections get added dynamically-->
+			</ul>
 		</section>
 
 		<section>
@@ -73,6 +77,7 @@
 		</section>
 	
 	</div><!--fullpage id for fullpage.js-->
+	<script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="public/scripts/main.js"></script>
 	<script src="./vendors/scripts/jquery.fullPage.js"></script>
