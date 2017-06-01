@@ -2,56 +2,61 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-
 	<title>Kara-OK</title>
 	<link href="https://fonts.googleapis.com/css?family=Oswald:700|Roboto:500" rel="stylesheet">
 	<link rel="stylesheet" href="./public/styles/style.css">
+	<link rel=“stylesheet” href="./vendors/styles/jquery.fullPage.css">
 </head>
 <body>
-	<header>
-		<div class="wrapper">
-			<h1>KARA-OK</h1>
-			<h2>Tagline TK</h2>
-		</div>
-	</header>
-	<section class="userInput">
-		<div class="wrapper">
-			<form action="">
-				<!-- first/left search box -->
-				<div>
-					<input type="text" class="trackName" id="trackName">
-					<label for="trackName">Song Title</label>
-					<input type="text" class="artistName" id="artistName">
-					<label for="artistName">Artist</label>
-				</div>
-				<!-- second/right search box -->
-				<input type="text" class="lyricsName" id="lyricsName" placeholder="Billie Jean is not my lover she's just some ...">
-				<label for="lyricsName">Enter some lyrics</label>
-				<div>
+	<div id="fullpage">
+		<header class="section" data-anchor="slide1">
+			<div class="wrapper">
+				<h1>KARA-OK</h1>
+				<h2>Tagline TK</h2>
+			</div>
+		</header>
+		<section class="section userInput" data-anchor="slide2">
+			<div class="wrapper">
+				<form action="">
+					<!-- first/left search box -->
+					<div>
+						<input type="text" class="trackName" id="trackName">
+						<label for="trackName">Song Title</label>
+						<input type="text" class="artistName" id="artistName">
+						<label for="artistName">Artist</label>
+					</div>
+					<!-- second/right search box -->
+					<input type="text" class="lyricsName" id="lyricsName" placeholder="Billie Jean is not my lover she's just some ...">
+					<label for="lyricsName">Enter some lyrics</label>
+					<div>
+						
+					</div>
+					<input type="submit" class="submitButton">
+				</form>	
+			</div>
+		</section>
+		<section class="section inputResults" data-anchor="slide3">
+			<div class="wrapper">
+				<ul class="songGallery">
 					
+				</ul>
+				<!-- dynamically render structure through JS -->
+			</div>
+		</section>
+		<section>
+			<footer class="section" data-anchor="slide3">
+				<div class="wrapper">
+				<!-- Will this be a pop-up or a page? Either way, dynamically render results -->
+					<p>Data provided <a href="https://www.musixmatch.com/">Musixmatch</a>.Created by Septembre Anderson, Vincent Chevalier and Will Lotosky.</p>
 				</div>
-				<input type="submit" class="submitButton">
-			</form>	
-		</div>
-	</section>
-	<section class="inputResults">
-		<div class="wrapper">
-			<ul class="songGallery">
+
 				
-			</ul>
-			<!-- dynamically render structure through JS -->
-		</div>
-	</section>
-	<section>
-	<div class="wrapper">
-		<!-- Will this be a pop-up or a page? Either way, dynamically render results -->
-		<footer>
-			<p>Data provided <a href="https://www.musixmatch.com/">Musixmatch</a>.Created by Septembre Anderson, Vincent Chevalier and Will Lotosky.</p>
-		</footer>
-	</div>
-	</section>
+			</footer>
+		</section>
+	</div><!--fullpage id for fullpage.js-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="node_modules/bad-language-filter/bundle.js"></script>
-  <script src="dev/scripts/main.js"></script>
+  <script src="public/scripts/main.js"></script>
+	<script src="./vendors/scripts/jquery.fullPage.js"></script>
 </body>
 </html>
