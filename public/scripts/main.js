@@ -13,6 +13,11 @@ karaOK.apikey = '12b27a829caf5c2fbc15751c5a1609d1';
 
 karaOK.init = function () {
 	karaOK.eventHandlers();
+	karaOK.fullPage();
+};
+
+karaOK.fullPage = function () {
+	$('#fullpage').fullpage();
 };
 
 karaOK.eventHandlers = function () {
@@ -67,12 +72,10 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 			var artistName = $('<h3>').text(track.track.artist_name);
 			var trackName = $('<h2>').text(track.track.track_name);
 
-			var lyricsId = track.track.track_id;
+			var trackId = track.track.track_id;
 
-			galleryUnit.data('lyrics-id', lyricsId);
+			galleryUnit.data('track-id', trackId);
 			galleryUnit.append(coverArt, trackName, artistName, albumName);
-
-			console.log(lyricsId);
 
 			$('.songGallery').append(galleryUnit);
 		});
@@ -90,7 +93,7 @@ karaOK.getLyrics = function (trackId) {
 			format: 'jsonp'
 		}
 	}).then(function (result) {
-		console.log(result);
+		var lyrics = result;
 	});
 };
 

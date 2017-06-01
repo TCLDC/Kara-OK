@@ -11,6 +11,11 @@ karaOK.apikey = '12b27a829caf5c2fbc15751c5a1609d1';
 
 karaOK.init = function() {
 	karaOK.eventHandlers();
+	karaOK.fullPage();
+}
+
+karaOK.fullPage = function() {
+	$('#fullpage').fullpage();
 }
 
 karaOK.eventHandlers = function () {
@@ -90,7 +95,7 @@ karaOK.getLyrics = function (trackId) {
 			format: 'jsonp'
 		}
 	}).then(function(result){
-		var lyrics = result.
+		var lyrics = result;
 	});
 
 }
