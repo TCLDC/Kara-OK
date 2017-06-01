@@ -1,3 +1,5 @@
+import BadLanguageFilter from 'bad-language-filter';
+
 // 7. Use javascript filter to scan the lyrics for profanity.
 // 8. IF there is profanity display red + feedback
 // 9. IF ELSE display green + feedback
@@ -77,6 +79,7 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 		var trackList = result.message.body.track_list
 
 		trackList.forEach(function(track) {
+
 			var galleryUnit = $('<li>').addClass('galleryUnit');
 
 			var coverArt = $('<img>').attr('src', track.track.album_coverart_100x100);
@@ -111,8 +114,6 @@ karaOK.getLyrics = function (trackId) {
 		console.log(result);
 		var lyrics = result.message.body.lyrics.lyrics_body;
 		console.log(lyrics);
-		
-		// BadLanguageFilter.prototype.contains(lyrics);
 	});	
 
 }

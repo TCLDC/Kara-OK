@@ -5,6 +5,10 @@ const babel = require("gulp-babel");
 const browserSync = require("browser-sync").create();
 const autoprefixer = require('gulp-autoprefixer');
 const reload = browserSync.reload;
+const buffer = require('vinyl-buffer');
+const source = require('vinyl-source-stream');
+const browserify = require('browserify');
+const notify = require('gulp-notify');
 
 gulp.task("browser-sync", () => {
 	browserSync.init({
@@ -22,12 +26,20 @@ gulp.task("styles", () => {
 });
 
 gulp.task("scripts", () => {
-	return gulp.src('./dev/scripts/main.js')
-		.pipe(babel({
-			presets: ["es2015"]
+	return browserify('./dev/scripts/main.js', {debug: true})
+		.transform('babelify', {
+			sourceMaps: true,
+			presets: ['es2015']
+		})
+		.bundle()
+		.on('error', notify.onError({
+			message: "Error: <%= error.message %>",
+			title: 'Error in JS 💀'
 		}))
-		.pipe(gulp.dest("./public/scripts"))
-		.pipe(reload({stream: true}));
+		.pipe(source('main.js'))
+		.pipe(buffer())
+		.pipe(gulp.dest('./public/scripts/'))
+		.pipe(reload({stream: true}))
 });
 
 gulp.task("watch", () => {
