@@ -13,10 +13,9 @@ body{
 }
 
 .wrapper {
-	height: 95%;
+	// height: 95%;
 	width: 90%;
-	margin: auto;
-	margin-top: 5%;
+	// margin: 0 auto;
 }
 
 header, section {
@@ -62,9 +61,9 @@ p.trName{
 }
 
 .textbox {
-	position: relative;
+	// position: relative;
 	padding-top: 10%;
-
+}
 
 
 .niceborder1 {
@@ -90,8 +89,9 @@ p.trName{
 }
 
 .firstSearchBox, .secondSearchBox {
-	border: 1px solid black;
+	border: 2px solid black;
 	float: left;
+	width: 50%;
 }
 
 .userInput h2 {
@@ -102,7 +102,7 @@ p.trName{
 }
 
 .submitButton {
-
+	display: block;
 }
   
 .songGallery{
