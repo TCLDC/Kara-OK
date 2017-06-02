@@ -55,9 +55,9 @@ karaOK.eventHandlers = function () {
 
 		var trackID = $(this).data('track-id');
 
-		karaOK.selectedAlbumName = $(this).find("h4").text();
-		karaOK.selectedArtistName = $(this).find("h3").text();
-		karaOK.selectedTrackName = $(this).find("h2").text();
+		karaOK.selectedAlbumName = $(this).find(".alName").text();
+		karaOK.selectedArtistName = $(this).find(".arName").text();
+		karaOK.selectedTrackName = $(this).find(".trName").text();
 
 		karaOK.getLyrics(trackID);
 
@@ -67,13 +67,6 @@ karaOK.eventHandlers = function () {
 	$("#addToPlaylist").on("click", function(){
 		
 		// Move the li add to DOM section to for loop so list is created from firebase
-		var playlistAlbum = $("<h4>").text(karaOK.selectedAlbumName);
-		var playlistArtist = $("<h3>").text(karaOK.selectedArtistName); 
-		var playlistTrack = $("<h2>").text(karaOK.selectedTrackName);
-		var removePlaylistItem = $("<button>").addClass('removeButton').text('-');
-
-		var playListItem = $("<li >").append(playlistTrack, playlistArtist, playlistAlbum, removePlaylistItem)
-			.addClass(playListItem);
 		var safeListItem = {
 			safeListAlbum: karaOK.selectedAlbumName,
 			safelistArtist: karaOK.selectedArtistName,
@@ -81,25 +74,29 @@ karaOK.eventHandlers = function () {
 		};
 
 		// 10. Allow user to save song to playlist
-		console.log(playListItem);
-
 		playlistRef.push(safeListItem);
-		console.log("adding list", safeListItem)
-		playlistRef.on('value', function(firebaseData) {
-			var playlistData = firebaseData;
-			var musicList = firebaseData.val();
-			// console.log(musicList)
-			for (let key in musicList) {
-				console.log(key)
-				console.log(musicList[key])
-				playListItem.data('firebaseId', );
 
+		playlistRef.on('value', function(firebaseData) {
+			
+			var playlist = firebaseData.val();
+			
+			for (let key in playlist) {
+				console.log(key)
+				console.log(playlist[key])
+
+				var playlistAlbum = $("<p>").text(playlist[key].safeListAlbum).addClass(alName);
+				var playlistArtist = $("<p>").text(playlist[key].safelistArtist).addClass(arName); 
+				var playlistTrack = $("<p>").text(playlist[key].safeListTrack).addClass(trName);
+				var removePlaylistItem = $("<button>").addClass('removeButton').text('-');
+
+				var playListItem = $("<li >").append(playlistTrack, playlistArtist, playlistAlbum, removePlaylistItem)
+					.addClass(playListItem).data('firebaseId', playlist[key]);
+				
+				$(".safePlayList").append(playListItem);
 			}
 
-			// console.log(firebaseData.val());
 		});
 
-		$(".safePlayList").append(playListItem);
 	});
 
 	$('.songGallery').on('click', '.removeButton', function() {
@@ -137,9 +134,9 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 			var galleryUnit = $('<li>').addClass('galleryUnit');
 
 			var coverArt = $('<img>').attr('src', track.track.album_coverart_100x100);
-			var albumName = $('<h4>').text(track.track.album_name);
-			var artistName = $('<h3>').text(track.track.artist_name);
-			var trackName = $('<h2>').text(track.track.track_name);
+			var albumName = $('<p>').text(track.track.album_name).addClass(alName);
+			var artistName = $('<p>').text(track.track.artist_name).addClass(arName);
+			var trackName = $('<p>').text(track.track.track_name).addClass(trName);
 
 			var trackId = track.track.track_id;
 
