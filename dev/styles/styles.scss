@@ -15,6 +15,26 @@ body{
 h1, h2, h3, h4{
 	font-family: $titleFont;
 	color:$mainIdentityColor;
+	margin: 0;
+	padding: 0;
+}
+
+h2{
+	font-size: 2rem;
+}
+
+h3, h4{
+	font-size: 1.8rem
+}
+
+.songGallery{
+	display: inline-block;
+	list-style-type: none;
+	padding: 0;
+	img{
+		width: 100%;
+		max-width:50px;
+	}
 }
 
 .modal {
