@@ -139,13 +139,8 @@ body {
   font-family: "Roboto", sans-serif; }
 
 .wrapper {
-  height: 95%;
   width: 90%;
-  margin: auto;
-  margin-top: 5%; }
-
-header, section {
-  height: 100vh; }
+  margin: 0 auto; }
 
 header {
   background-image: url(../../assets/mainHero.jpg);
@@ -168,11 +163,23 @@ h2 {
   font-size: 40px;
   color: white; }
 
+h3, h4 {
+  font-size: 1.8rem; }
+
+p {
+  margin: 0;
+  padding: 0; }
+
+i {
+  color: white;
+  font-size: 40px; }
+
+p.trName {
+  font-weight: bold; }
 
 .textbox {
   position: relative;
   padding-top: 10%; }
-
 
 .niceborder1 {
   border: 5px solid #004E7B;
@@ -181,6 +188,7 @@ h2 {
 .niceborder2 {
   border: 5px solid white;
   border-radius: 40px; }
+
 .formContainer {
   border: 2px solid black;
   text-align: center;
@@ -196,8 +204,6 @@ h2 {
   text-align: center;
   color: #F0C31A; }
 
-h3, h4 {
-  font-size: 1.8rem; }
 .songGallery {
   list-style-type: none;
   padding: 0; }

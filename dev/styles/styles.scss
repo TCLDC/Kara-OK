@@ -13,15 +13,14 @@ body{
 }
 
 .wrapper {
-	// height: 95%;
 	width: 90%;
-
+	margin: 0 auto;
 
 }
 
-header, section {
-	height: 100vh;
-}
+// header, section {
+// 	height: 100vh;
+// }
 
 header {
 	background-image: url(../../assets/mainHero.jpg);
@@ -69,7 +68,7 @@ p.trName{
 .textbox {
 	position: relative;
 	padding-top: 10%;
-
+}
 
 
 .niceborder1 {
@@ -106,9 +105,9 @@ p.trName{
 	color: $mainIdentityColor;
 }
 
-.submitButton {
+// .submitButton {
 
-}
+// }
   
 .songGallery{
 	list-style-type: none;
