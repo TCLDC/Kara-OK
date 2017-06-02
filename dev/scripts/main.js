@@ -58,7 +58,7 @@ karaOK.eventHandlers = function () {
 
 
 			
-		console.log(userArtistName);
+		// console.log(userArtistName);
 	});
 
 	// 5. Receive user selection.
@@ -142,26 +142,32 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 	}).then(function (result){
 		// 4. Display API request results on screen
 		// 	(track_id, track_name, explicit, album_name, artist_name, album_coverart_100x100, track_share_url)
+		console.log(result);
 		var trackList = result.message.body.track_list
 
+		if (trackList.length === 0) {
+			alert("That's not a valid song choice. Please try again.")
+		} else {
 		trackList.forEach(function(track) {
 
-			var galleryUnit = $('<li>').addClass('galleryUnit');
+				var galleryUnit = $('<li>').addClass('galleryUnit');
 
-			var coverArt = $('<img>').attr('src', track.track.album_coverart_100x100);
-			var albumName = $('<p>').text(track.track.album_name).addClass('alName');
-			var artistName = $('<p>').text(track.track.artist_name).addClass('arName');
-			var trackName = $('<p>').text(track.track.track_name).addClass('trName');
+				var coverArt = $('<img>').attr('src', track.track.album_coverart_100x100);
+				var albumName = $('<p>').text(track.track.album_name).addClass('alName');
+				var artistName = $('<p>').text(track.track.artist_name).addClass('arName');
+				var trackName = $('<p>').text(track.track.track_name).addClass('trName');
 
-			var trackId = track.track.track_id;
+				var trackId = track.track.track_id;
 
-			galleryUnit.data('track-id', trackId);
-			galleryUnit.append(coverArt, trackName, artistName, albumName);
-			// var galleryUnitFinal = galleryUnit.append(coverArt, trackName, artistName, albumName);
-			$('.songGallery').append(galleryUnit);
-			// $('.songGallery').append(galleryUnitFinal);
+				galleryUnit.data('track-id', trackId);
+				galleryUnit.append(coverArt, trackName, artistName, albumName);
+				// var galleryUnitFinal = galleryUnit.append(coverArt, trackName, artistName, albumName);
+				$('.songGallery').append(galleryUnit);
+				// $('.songGallery').append(galleryUnitFinal);
 
-		});
+			});
+		}
+
 
 	});
 }
