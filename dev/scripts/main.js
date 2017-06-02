@@ -45,7 +45,7 @@ karaOK.eventHandlers = function () {
 
 	// 1. Receive user input.
 		$('form').on('submit', function(event) {
-		$.fn.fullpage.moveTo(3);
+
 		event.preventDefault();
 		var userTrackName = $('.trackName').val();
 		var userArtistName = $('.artistName').val();
@@ -147,9 +147,10 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 		var trackList = result.message.body.track_list
 
 		if (trackList.length === 0) {
-			alert("That's not a valid song choice. Please try again.")
+			alert("That's not a valid song choice. Please try again.");
 		} else {
 		trackList.forEach(function(track) {
+				$.fn.fullpage.moveTo(3);
 
 				var galleryUnit = $('<li>').addClass('galleryUnit');
 
