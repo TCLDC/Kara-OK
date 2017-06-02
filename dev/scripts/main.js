@@ -32,6 +32,17 @@ karaOK.fullPage = function() {
 
 karaOK.eventHandlers = function () {
 
+	// BUTTONS
+	// user clicks downward chevron to move through page
+		$('#scrollDownToForm').on('click', function(){
+			$.fn.fullpage.moveTo(2);
+		})
+
+	// on KARA NO-K (Explicit content) user clicks to return to search
+		$('#backToSearch').on('click', function(){
+			$.fn.fullpage.moveTo(2);
+		})	
+
 	// 1. Receive user input.
 		$('form').on('submit', function(event) {
 		$.fn.fullpage.moveTo(3);
@@ -95,6 +106,8 @@ karaOK.eventHandlers = function () {
 				$(".safePlayList").append(playListItem);
 			}
 
+		//when user clicks on Add To Playlist, move down to playlist
+			$.fn.fullpage.moveTo(5);
 		});
 
 	});

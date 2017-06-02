@@ -170,9 +170,9 @@ p {
   margin: 0;
   padding: 0; }
 
-i {
+.fa-chevron-down {
   color: white;
-  font-size: 40px; }
+  cursor: pointer; }
 
 p.trName {
   font-weight: bold; }
@@ -214,17 +214,15 @@ p.trName {
     max-width: 50px; }
 
 .modal {
-  background-color: red;
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 70%;
-  height: 50%;
-  overflow: auto; }
+  background-color: #004E7B; }
+
+.modalYes {
+  background-color: forestgreen;
+  display: none; }
+
+.modalNo {
+  background-color: firebrick;
+  display: none; }
 
 .modalDisplay {
   display: block; }

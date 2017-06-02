@@ -56,9 +56,10 @@ p{
 	padding: 0;
 }
 
-i {
+.fa-chevron-down{
 	color: white;
-	font-size: 40px;
+	// font-size: 40px;
+	cursor: pointer;
 }
 
 p.trName{
@@ -122,17 +123,17 @@ p.trName{
 }
 
 .modal {
-	background-color: red;
+	background-color: $alternateIdentityColor;
+}
+
+.modalYes{
+	background-color: forestgreen;
 	display: none;
-	position: fixed;
-	z-index: 1;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	width: 70%;
-	height: 50%;
-	overflow: auto;
+}
+
+.modalNo{
+	background-color: firebrick;
+	display: none;
 }
 
 .modalDisplay {
