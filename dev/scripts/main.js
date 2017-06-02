@@ -112,10 +112,12 @@ karaOK.eventHandlers = function () {
 
 	});
 
-	$('.songGallery').on('click', '.removeButton', function() {
+	$('.safePlayList').on('click', '.removeButton', function() {
+		console.log('clicked!');
 		var safeListRemoveData = $(this).data('firebaseId')
-		const todoRef = firebase.database().ref(`/playlist/${safeListRemoveData}`);
-		todoRef.remove();
+		console.log(this);
+		// const playlistEntry = firebase.database().ref(`/playlist/${safeListRemoveData}`);
+		// playlistEntry.remove();
 	});
 
 }
