@@ -148,6 +148,14 @@ header {
   background-repeat: no-repeat;
   background-size: cover; }
 
+svg {
+  fill: #F0C31A;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 10px;
+  left: 0; }
+
 h1, h2, h3, h4 {
   font-family: "Oswald", sans-serif;
   color: #F0C31A;
@@ -170,10 +178,6 @@ p {
   margin: 0;
   padding: 0; }
 
-.fa-angle-down {
-  color: white;
-  cursor: pointer; }
-
 p.trName {
   font-weight: bold; }
 
@@ -181,7 +185,8 @@ p.trName {
   display: inline-block;
   border: 5px solid #004E7B;
   border-radius: 10px;
-  height: 70%; }
+  height: 70%;
+  margin-top: 10%; }
 
 .box2 {
   height: 100%;
@@ -197,6 +202,12 @@ p.trName {
     position: absolute;
     top: 50px;
     left: 50px; }
+
+.fa-angle-down {
+  color: white;
+  cursor: pointer;
+  margin-top: 8%;
+  text-align: center; }
 
 .formContainer {
   border: 2px solid black;
