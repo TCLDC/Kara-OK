@@ -28,6 +28,15 @@ header {
 	background-size: cover;
 }
 
+svg {
+	fill: $mainIdentityColor;
+	width: 100px;
+	height: 100px;
+	position: fixed;
+	top: 10px;
+	left: 0;
+}
+
 h1, h2, h3, h4{
 	font-family: $titleFont;
 	color:$mainIdentityColor;
@@ -55,11 +64,7 @@ p{
 	padding: 0;
 }
 
-.fa-angle-down{
-	color: white;
-	// font-size: 40px;
-	cursor: pointer;
-}
+
 
 p.trName{
 	font-weight:bold;
@@ -70,6 +75,7 @@ p.trName{
 	border: 5px solid $alternateIdentityColor;
 	border-radius: 10px;
 	height: 70%;
+	margin-top: 10%;
 }
 
 .box2 {
@@ -87,6 +93,13 @@ p.trName{
     top: 50px;
     left: 50px;
   }
+}
+
+.fa-angle-down{
+	color: white;
+	cursor: pointer;
+	margin-top: 8%;
+	text-align: center;
 }
 
 .formContainer {
