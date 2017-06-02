@@ -178,7 +178,6 @@ p.trName {
   font-weight: bold; }
 
 .textbox {
-  position: relative;
   padding-top: 10%; }
 
 .niceborder1 {
@@ -195,14 +194,18 @@ p.trName {
   height: 80%; }
 
 .firstSearchBox, .secondSearchBox {
-  border: 1px solid black;
-  float: left; }
+  border: 2px solid black;
+  float: left;
+  width: 50%; }
 
 .userInput h2 {
   font-size: 80px;
   font-family: "Oswald", sans-serif;
   text-align: center;
   color: #F0C31A; }
+
+.submitButton {
+  display: block; }
 
 .songGallery {
   list-style-type: none;
