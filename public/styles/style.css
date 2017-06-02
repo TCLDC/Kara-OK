@@ -160,6 +160,16 @@ h2 {
   font-size: 40px;
   color: white; }
 
+h3, h4 {
+  font-size: 1.8rem; }
+
+p {
+  margin: 0;
+  padding: 0; }
+
+p.trName {
+  font-weight: bold; }
+
 .niceborder1 {
   border: 5px solid #004E7B;
   border-radius: 40px; }
@@ -168,13 +178,11 @@ h2 {
   border: 5px solid white;
   border-radius: 40px; }
 
-h3, h4 {
-  font-size: 1.8rem; }
-
 .songGallery {
-  display: inline-block;
   list-style-type: none;
   padding: 0; }
+  .songGallery li {
+    display: inline-block; }
   .songGallery img {
     width: 100%;
     max-width: 50px; }

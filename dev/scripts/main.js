@@ -40,8 +40,8 @@ karaOK.fullPage = function() {
 karaOK.eventHandlers = function () {
 
 	// 1. Receive user input.
-	$('form').on('submit', function(event) {
-
+		$('form').on('submit', function(event) {
+		$.fn.fullpage.moveTo(3);
 		event.preventDefault();
 		var userTrackName = $('.trackName').val();
 		var userArtistName = $('.artistName').val();
@@ -49,6 +49,11 @@ karaOK.eventHandlers = function () {
 
 		karaOK.getSongInfo(userTrackName, userArtistName, userLyricsName);
 
+
+		  
+
+
+			
 		console.log(userArtistName);
 	});
 

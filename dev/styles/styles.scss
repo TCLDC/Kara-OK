@@ -38,6 +38,19 @@ h2{
 	color: white;
 }
 
+h3, h4{
+	font-size: 1.8rem
+}
+
+p{
+	margin: 0;	
+	padding: 0;
+}
+
+p.trName{
+	font-weight:bold;
+}
+
 .niceborder1 {
 	border: 5px solid $alternateIdentityColor;
 	border-radius: 40px;
@@ -48,9 +61,7 @@ h2{
 	border-radius: 40px;
 }
 
-h3, h4{
-	font-size: 1.8rem
-}
+
 
 .songGallery{
 	list-style-type: none;
