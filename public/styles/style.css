@@ -177,13 +177,6 @@ p {
 p.trName {
   font-weight: bold; }
 
-.textbox {
-  padding-top: 10%; }
-
-.niceborder1 {
-  border: 5px solid #004E7B;
-  border-radius: 40px; }
-
 .box1 {
   display: inline-block;
   border: 3px solid darkblue;
