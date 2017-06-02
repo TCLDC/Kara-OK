@@ -12,8 +12,18 @@ body{
 	font-family: $bodyFont;
 }
 
-header {
+.wrapper {
+	height: 95%;
+	width: 90%;
+	margin: auto;
+	margin-top: 5%;
+}
+
+header, section {
 	height: 100vh;
+}
+
+header {
 	background-image: url(../../assets/mainHero.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -32,7 +42,7 @@ h1 {
 	font-size: 175px;
 }
 
-h2{
+h2 {
 	text-align: center;
 	font-size: 40px;
 	color: white;
@@ -51,18 +61,50 @@ p.trName{
 	font-weight:bold;
 }
 
+.textbox {
+	position: relative;
+	padding-top: 10%;
+
+
+
 .niceborder1 {
 	border: 5px solid $alternateIdentityColor;
 	border-radius: 40px;
+	// position: absolute;
+	// top: 50%;
+	// left: 40%;
 }
 
 .niceborder2 {
 	border: 5px solid white;
 	border-radius: 40px;
+	// position: absolute;
+	// top: 60%;
+	// left: 50%;
 }
 
+.formContainer {
+	border: 2px solid black;
+	text-align: center;
+	height: 80%;
+}
 
+.firstSearchBox, .secondSearchBox {
+	border: 1px solid black;
+	float: left;
+}
 
+.userInput h2 {
+	font-size: 80px;
+	font-family: $titleFont;
+	text-align: center;
+	color: $mainIdentityColor;
+}
+
+.submitButton {
+
+}
+  
 .songGallery{
 	list-style-type: none;
 	padding: 0;

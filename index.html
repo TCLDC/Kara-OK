@@ -13,8 +13,10 @@
 			<div class="wrapper">
 				<div class="niceborder1">
 				<div class="niceborder2">
-					<h1>KARA-OK</h1>
-					<h2>Keep Your Karaoke Clean!</h2>
+					<div class="textbox">
+						<h1>KARA-OK</h1>
+						<h2>Keep Your Karaoke Clean!</h2>
+					</div>
 				</div>
 				</div>
 			</div>
@@ -22,19 +24,19 @@
 
 		<section class="section userInput" data-anchor="slide2">
 			<div class="wrapper">
-				<form action="">
-					<!-- first/left search box -->
-					<div class="box">
+				<form action="" class="formContainer">
+					<h2>Search</h2>
+					<div class="firstSearchBox"> <!-- first/left search box -->
 						<label for="trackName">Song Title</label>
 						<input type="text" class="trackName" id="trackName">
+		
 						<label for="artistName">Artist</label>
 						<input type="text" class="artistName" id="artistName">
-					</div>
-					<!-- second/right search box -->
-					<div class="box">
-						<label for="lyricsName">Enter some lyrics</label>
-						<input type="text" class="lyricsName" id="lyricsName" placeholder="Billie Jean is not my lover she's just some ...">
-					</div>
+					</div> <!-- first/left search box -->
+					<div class="secondSearchBox"> <!-- second/right search box -->
+						<label for="lyricsName">Enter Some Lyrics</label>
+						<input type="text" class="lyricsName" id="lyricsName" placeholder="ie. Billie Jean is not my lover">
+					</div> <!-- second/right search box -->
 					<input type="submit" class="submitButton">
 				</form>	
 			</div>
