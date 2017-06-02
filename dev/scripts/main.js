@@ -84,9 +84,9 @@ karaOK.eventHandlers = function () {
 				console.log(key)
 				console.log(playlist[key])
 
-				var playlistAlbum = $("<p>").text(playlist[key].safeListAlbum).addClass(alName);
-				var playlistArtist = $("<p>").text(playlist[key].safelistArtist).addClass(arName); 
-				var playlistTrack = $("<p>").text(playlist[key].safeListTrack).addClass(trName);
+				var playlistAlbum = $("<p>").text(playlist[key].safeListAlbum).addClass('alName');
+				var playlistArtist = $("<p>").text(playlist[key].safelistArtist).addClass('arName'); 
+				var playlistTrack = $("<p>").text(playlist[key].safeListTrack).addClass('trName');
 				var removePlaylistItem = $("<button>").addClass('removeButton').text('-');
 
 				var playListItem = $("<li >").append(playlistTrack, playlistArtist, playlistAlbum, removePlaylistItem)
@@ -134,9 +134,9 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 			var galleryUnit = $('<li>').addClass('galleryUnit');
 
 			var coverArt = $('<img>').attr('src', track.track.album_coverart_100x100);
-			var albumName = $('<p>').text(track.track.album_name).addClass(alName);
-			var artistName = $('<p>').text(track.track.artist_name).addClass(arName);
-			var trackName = $('<p>').text(track.track.track_name).addClass(trName);
+			var albumName = $('<p>').text(track.track.album_name).addClass('alName');
+			var artistName = $('<p>').text(track.track.artist_name).addClass('arName');
+			var trackName = $('<p>').text(track.track.track_name).addClass('trName');
 
 			var trackId = track.track.track_id;
 
