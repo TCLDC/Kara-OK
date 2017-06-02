@@ -1,10 +1,5 @@
 import BadLanguageFilter from 'bad-language-filter';
 
-
-// 8. IF there is profanity display red + feedback
-// 9. IF ELSE display green + feedback
-// 10. Allow user to save song to playlist
-
 var karaOK = {};
 
 karaOK.apikey = '12b27a829caf5c2fbc15751c5a1609d1';
@@ -21,8 +16,6 @@ var config = {
 firebase.initializeApp(config);
 
 const playlistRef = firebase.database().ref('/playlist');
-
-playlistRef.push('new music');
 
 //bad language filter
 var filter = new BadLanguageFilter();
@@ -60,8 +53,6 @@ karaOK.eventHandlers = function () {
 		karaOK.selectedAlbumName = $(this).find("h4").text();
 		karaOK.selectedArtistName = $(this).find("h3").text();
 		karaOK.selectedTrackName = $(this).find("h2").text();
-		// console.log(this);
-		// console.log(selectedAlbumName, selectedArtistName, selectedTrackName);
 
 		karaOK.getLyrics(trackID);
 
@@ -70,23 +61,47 @@ karaOK.eventHandlers = function () {
 
 	$("#addToPlaylist").on("click", function(){
 		
+		// Move the li add to DOM section to for loop so list is created from firebase
 		var playlistAlbum = $("<h4>").text(karaOK.selectedAlbumName);
 		var playlistArtist = $("<h3>").text(karaOK.selectedArtistName); 
 		var playlistTrack = $("<h2>").text(karaOK.selectedTrackName);
+		var removePlaylistItem = $("<button>").addClass('removeButton').text('-');
 
-		var playListItem = $("<li>").append(playlistTrack, playlistArtist, playlistAlbum);
+		var playListItem = $("<li >").append(playlistTrack, playlistArtist, playlistAlbum, removePlaylistItem)
+			.addClass(playListItem);
 		var safeListItem = {
 			safeListAlbum: karaOK.selectedAlbumName,
 			safelistArtist: karaOK.selectedArtistName,
 			safeListTrack: karaOK.selectedTrackName
 		};
 
-		$(".safePlayList").append(playListItem);
-
+		// 10. Allow user to save song to playlist
 		console.log(playListItem);
 
 		playlistRef.push(safeListItem);
-	})
+		console.log("adding list", safeListItem)
+		playlistRef.on('value', function(firebaseData) {
+			var playlistData = firebaseData;
+			var musicList = firebaseData.val();
+			// console.log(musicList)
+			for (let key in musicList) {
+				console.log(key)
+				console.log(musicList[key])
+				playListItem.data('firebaseId', );
+
+			}
+
+			// console.log(firebaseData.val());
+		});
+
+		$(".safePlayList").append(playListItem);
+	});
+
+	$('.songGallery').on('click', '.removeButton', function() {
+		var safeListRemoveData = $(this).data('firebaseId')
+		const todoRef = firebase.database().ref(`/playlist/${safeListRemoveData}`);
+		todoRef.remove();
+	});
 
 }
 
@@ -155,14 +170,13 @@ karaOK.getLyrics = function (trackId) {
 		var filterSwear = filter.contains(lyrics);
 		console.log(filterSwear);
 
+		// 8. IF there is profanity display red + feedback
 		if (filterSwear === true) {
 			$('.modalNo').addClass('modalDisplay');
+		// 9. IF ELSE display green + feedback
 		} else if (filterSwear === false) {
 			$('.modalYes').addClass('modalDisplay');
 		}
-
-		
-
 	});	
 }
 
