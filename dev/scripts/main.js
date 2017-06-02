@@ -100,9 +100,9 @@ karaOK.eventHandlers = function () {
 				var playlistTrack = $("<p>").text(playlist[key].safeListTrack).addClass('trName');
 				var removePlaylistItem = $("<button>").addClass('removeButton').text('-');
 
-				var playListItem = $("<li >").append(playlistTrack, playlistArtist, playlistAlbum, removePlaylistItem)
-					.addClass(playListItem).data('firebaseId', playlist[key]);
+				var playListItem = $("<li>").append(playlistTrack, playlistArtist, playlistAlbum, removePlaylistItem).addClass('playListItem');
 				
+				playListItem = playListItem.data('firebaseId', key);
 				$(".safePlayList").append(playListItem);
 			}
 
@@ -114,10 +114,10 @@ karaOK.eventHandlers = function () {
 
 	$('.safePlayList').on('click', '.removeButton', function() {
 		console.log('clicked!');
-		var safeListRemoveData = $(this).data('firebaseId')
-		console.log(this);
-		// const playlistEntry = firebase.database().ref(`/playlist/${safeListRemoveData}`);
-		// playlistEntry.remove();
+		var safeListRemoveData = $(this).parent('.playListItem').data('firebaseId');
+		console.log(safeListRemoveData);
+		const playlistEntry = firebase.database().ref(`/playlist/${safeListRemoveData}`);
+		playlistEntry.remove();
 	});
 
 }
