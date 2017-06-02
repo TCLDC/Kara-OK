@@ -179,7 +179,8 @@ p.trName {
 
 .box1 {
   display: inline-block;
-  border: 3px solid darkblue;
+  border: 3px solid #004E7B;
+  border-radius: 10px;
   height: 70%; }
 
 .box2 {
