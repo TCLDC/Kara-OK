@@ -63,7 +63,7 @@ karaOK.eventHandlers = function () {
 
 	// 5. Receive user selection.
 	$('.songGallery').on('click', '.galleryUnit', function (){
-
+		$.fn.fullpage.moveTo(4);
 		var trackID = $(this).data('track-id');
 
 		karaOK.selectedAlbumName = $(this).find(".alName").text();
