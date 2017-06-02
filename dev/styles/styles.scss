@@ -55,7 +55,7 @@ p{
 	padding: 0;
 }
 
-.fa-chevron-down{
+.fa-angle-down{
 	color: white;
 	// font-size: 40px;
 	cursor: pointer;
@@ -67,7 +67,7 @@ p.trName{
 
 .box1 {
 	display: inline-block;
-	border: 3px solid $alternateIdentityColor;
+	border: 5px solid $alternateIdentityColor;
 	border-radius: 10px;
 	height: 70%;
 }
@@ -79,12 +79,13 @@ p.trName{
   &:after {
     content: '';
     display: inherit;
-    border: inherit;
+    border: 5px solid white;
+    border-radius: 10px;
     width: inherit;
     height: inherit;
     position: absolute;
-    top: 3px;
-    right: 4px;
+    top: 50px;
+    left: 50px;
   }
 }
 

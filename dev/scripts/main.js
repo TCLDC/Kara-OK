@@ -90,7 +90,8 @@ karaOK.eventHandlers = function () {
 		playlistRef.on('value', function(firebaseData) {
 			
 			var playlist = firebaseData.val();
-			
+			$('.safePlayList').empty();
+
 			for (let key in playlist) {
 				console.log(key)
 				console.log(playlist[key])
