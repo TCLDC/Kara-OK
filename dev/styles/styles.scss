@@ -48,10 +48,24 @@ h2 {
 	color: white;
 }
 
+h3, h4{
+	font-size: 1.8rem
+}
+
+p{
+	margin: 0;	
+	padding: 0;
+}
+
+p.trName{
+	font-weight:bold;
+}
+
 .textbox {
 	position: relative;
 	padding-top: 10%;
-}
+
+
 
 .niceborder1 {
 	border: 5px solid $alternateIdentityColor;
@@ -90,15 +104,13 @@ h2 {
 .submitButton {
 
 }
-
-h3, h4 {
-	font-size: 1.8rem
-}
-
+  
 .songGallery{
-	display: inline-block;
 	list-style-type: none;
 	padding: 0;
+	li{
+	display: inline-block;
+	}
 	img{
 		width: 100%;
 		max-width:50px;
@@ -108,7 +120,7 @@ h3, h4 {
 .modal {
 	background-color: red;
 	display: none;
-	position: absolute;
+	position: fixed;
 	z-index: 1;
 	left: 0;
 	top: 0;
