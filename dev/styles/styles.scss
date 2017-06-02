@@ -55,36 +55,55 @@ p{
 	padding: 0;
 }
 
-i {
+.fa-chevron-down{
 	color: white;
-	font-size: 40px;
+	// font-size: 40px;
+	cursor: pointer;
 }
 
 p.trName{
 	font-weight:bold;
 }
 
-.textbox {
-	// position: relative;
-	padding-top: 10%;
+.box1 {
+	display: inline-block;
+	border: 3px solid darkblue;
+	height: 70%;
+}
+
+.box2 {
+  height: 100%;
+  width: 100%;
+  // height: 2em;
+  position: relative;
+  &:after {
+    content: '';
+    display: inherit;
+    border: inherit;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 3px;
+    right: 4px;
+  }
 }
 
 
-.niceborder1 {
-	border: 5px solid $alternateIdentityColor;
-	border-radius: 40px;
-	// position: absolute;
-	// top: 50%;
-	// left: 40%;
-}
+// .niceborder1 {
+// 	border: 5px solid $alternateIdentityColor;
+// 	border-radius: 40px;
+// 	// position: absolute;
+// 	// top: 50%;
+// 	// left: 40%;
+// }
 
-.niceborder2 {
-	border: 5px solid white;
-	border-radius: 40px;
-	// position: absolute;
-	// top: 60%;
-	// left: 50%;
-}
+// .niceborder2 {
+// 	border: 5px solid white;
+// 	border-radius: 40px;
+// 	// position: absolute;
+// 	// top: 60%;
+// 	// left: 50%;
+// }
 
 .formContainer {
 	border: 2px solid black;
@@ -123,17 +142,17 @@ p.trName{
 }
 
 .modal {
-	background-color: red;
+	background-color: $alternateIdentityColor;
+}
+
+.modalYes{
+	background-color: forestgreen;
 	display: none;
-	position: fixed;
-	z-index: 1;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	width: 70%;
-	height: 50%;
-	overflow: auto;
+}
+
+.modalNo{
+	background-color: firebrick;
+	display: none;
 }
 
 .modalDisplay {

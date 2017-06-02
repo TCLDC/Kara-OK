@@ -170,9 +170,9 @@ p {
   margin: 0;
   padding: 0; }
 
-i {
+.fa-chevron-down {
   color: white;
-  font-size: 40px; }
+  cursor: pointer; }
 
 p.trName {
   font-weight: bold; }
@@ -184,9 +184,24 @@ p.trName {
   border: 5px solid #004E7B;
   border-radius: 40px; }
 
-.niceborder2 {
-  border: 5px solid white;
-  border-radius: 40px; }
+.box1 {
+  display: inline-block;
+  border: 3px solid darkblue;
+  height: 70%; }
+
+.box2 {
+  height: 100%;
+  width: 100%;
+  position: relative; }
+  .box2:after {
+    content: '';
+    display: inherit;
+    border: inherit;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 3px;
+    right: 4px; }
 
 .formContainer {
   border: 2px solid black;
@@ -217,17 +232,15 @@ p.trName {
     max-width: 50px; }
 
 .modal {
-  background-color: red;
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 70%;
-  height: 50%;
-  overflow: auto; }
+  background-color: #004E7B; }
+
+.modalYes {
+  background-color: forestgreen;
+  display: none; }
+
+.modalNo {
+  background-color: firebrick;
+  display: none; }
 
 .modalDisplay {
   display: block; }
