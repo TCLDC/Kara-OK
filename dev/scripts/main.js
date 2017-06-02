@@ -70,17 +70,23 @@ karaOK.eventHandlers = function () {
 	});
 
 	$("#addToPlaylist").on("click", function(){
+		
 		var playlistAlbum = $("<h4>").text(karaOK.selectedAlbumName);
 		var playlistArtist = $("<h3>").text(karaOK.selectedArtistName); 
 		var playlistTrack = $("<h2>").text(karaOK.selectedTrackName);
 
 		var playListItem = $("<li>").append(playlistTrack, playlistArtist, playlistAlbum);
+		var safeListItem = {
+			safeListAlbum: karaOK.selectedAlbumName,
+			safelistArtist: karaOK.selectedArtistName,
+			safeListTrack: karaOK.selectedTrackName
+		};
 
 		$(".safePlayList").append(playListItem);
 
 		console.log(playListItem);
 
-		playlistRef.push(karaOK.selectedAlbumName, karaOK.selectedArtistName, karaOK.selectedTrackName);
+		playlistRef.push(safeListItem);
 	})
 
 }
@@ -100,7 +106,7 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 			f_has_lyrics: '',
 			f_lyrics_language: 'en',
 			format: 'jsonp',
-			page_size: 100
+			page_size: 10
 		}
 	}).then(function (result){
 		// 4. Display API request results on screen
