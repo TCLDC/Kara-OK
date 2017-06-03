@@ -142,19 +142,8 @@ body {
   width: 90%;
   margin: 0 auto; }
 
-header {
-  background-image: url(../../assets/mainHero.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
-
-svg {
-  fill: #F0C31A;
-  width: 100px;
-  height: 100px;
-  position: fixed;
-  top: 10px;
-  left: 0; }
+section {
+  padding: 100px 0; }
 
 h1, h2, h3, h4 {
   font-family: "Oswald", sans-serif;
@@ -178,8 +167,19 @@ p {
   margin: 0;
   padding: 0; }
 
-p.trName {
-  font-weight: bold; }
+header {
+  background-image: url(../../assets/mainHero.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+svg {
+  fill: #F0C31A;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 10px;
+  left: 0; }
 
 .box1 {
   display: inline-block;
@@ -222,9 +222,14 @@ p.trName {
   float: left;
   width: calc(50% - 25px);
   padding: 200px 50px; }
+  .firstSearchBox input, .secondSearchBox input {
+    padding: 10px; }
 
 .firstSearchBox {
   margin-right: 50px; }
+
+.inputBox {
+  margin-bottom: 20px; }
 
 .userInput h2 {
   font-size: 80px;
@@ -238,11 +243,23 @@ p.trName {
 .songGallery {
   list-style-type: none;
   padding: 0; }
-  .songGallery li {
-    display: inline-block; }
+  .songGallery .galleryUnit {
+    display: inline-block;
+    width: calc(20% - (80px / 5 ));
+    height: 190px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    overflow: hidden; }
+  .songGallery .galleryUnit:nth-of-type(5n) {
+    margin-right: 0; }
+  .songGallery .trName {
+    height: 22px;
+    overflow: hidden;
+    font-weight: bold; }
   .songGallery img {
     width: 100%;
-    max-width: 50px; }
+    max-width: 100px; }
 
 .modal {
   background-color: #004E7B; }
