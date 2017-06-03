@@ -1,0 +1,62 @@
+
+.inputResults {
+	background-image: url(../../../assets/playlistImage.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: rgba(255, 255, 255, 0.55);
+	padding: 0;
+	h2 {
+		font-size: 80px;
+		font-family: $titleFont;
+		text-align: center;
+		color: $mainIdentityColor;
+	}
+	.resultsWrapper {
+		border: 5px solid $alternateIdentityColor;
+		border-radius: 10px;
+		background-color: rgba(255, 255, 255, 0.25);
+		.trName {
+			font-family: $bodyFont;
+			font-size: 22px;
+			color: $alternateIdentityColor;
+		}
+		.arName {
+			font-family: $bodyFont;
+			font-size: 18px;
+			color: $alternateIdentityColor;
+		}
+		.alName {
+			font-family: $bodyFont;
+			font-size: 16px;
+			font-style: italic;
+			color: $secondaryIdentityColor;
+		}
+	}
+}
+
+.songGallery{
+	list-style-type: none;
+	padding: 0;
+	.galleryUnit {
+		display: inline-block;
+		width: calc(20% - (80px / 5 ));
+		height: 190px;
+		margin-right: 20px;
+		margin-bottom: 20px;
+		text-align: center;
+		overflow: hidden;
+	}
+	.galleryUnit:nth-of-type(5n) {
+		margin-right: 0;
+	}
+	.trName {
+		height: 22px;
+		overflow: hidden;
+		font-weight:bold;
+	}
+	img {
+		width: 100%;
+		max-width:100px;
+	}
+}
