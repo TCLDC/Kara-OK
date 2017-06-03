@@ -17,10 +17,6 @@ body{
 	margin: 0 auto;
 }
 
-// header, section {
-// 	height: 100vh;
-// }
-
 header {
 	background-image: url(../../assets/mainHero.jpg);
 	background-position: center;
@@ -106,17 +102,29 @@ p.trName{
 	text-align: center;
 }
 
+.userInput {
+	background-image: url(../../assets/searchImage.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .formContainer {
-	border: 2px solid black;
+	border: 5px solid #004E7B;
+	border-radius: 10px;
 	text-align: center;
-	height: 80%;
+	height: 50%;
+	margin-bottom: 5%;
 }
 
 .firstSearchBox, .secondSearchBox {
-	border: 2px solid black;
 	float: left;
 	width: calc(50% - 25px);
-	padding: 200px 50px;
+	margin: 0 15px;
+	padding: 150px 50px;
+	border: 5px solid $secondaryIdentityColor;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.25);
 }
 
 .firstSearchBox {
@@ -134,9 +142,95 @@ p.trName{
 	color: $mainIdentityColor;
 }
 
-.submitButton {
-	display: block;
+// <==== Submit Button Test ====>
+
+.subBox1 {
+	display: inline-block;
+	border: 2px solid white;
+	border-radius: 10px;
+	font-size: 16px;
+	padding: 25px 40px;
+	color: white;
+	text-transform: uppercase;
+	background-color: transparent;
 }
+
+.subBox2 {
+  position: relative;
+  left: -10px;
+   top: -10px;
+  &:after {
+    content: '';
+    display: inherit;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
+}
+
+// <==== Submit Button Test ====>
+
+// <==== Submit Button ====>
+
+// .submitButton {
+//     background-color: transparent;
+//     position: relative;
+//     display: inline-block;
+//     font-family: $bodyFont;
+//     margin-bottom: 0;
+//     text-align: center;
+//     vertical-align: middle;
+//     border: 2px solid white;
+//     color: white;
+//     border-radius: 10px;
+//     font-size: 16px;
+//     padding: 25px 40px;
+// }
+
+// .submitButton::before {
+//     border: 2px solid white;
+//     content: "";
+//     display: block;
+//     height: 100%;
+//     position: absolute;
+//     transition: all 0.3s ease 0s;
+//     width: 100%;
+// }
+
+// .submitButton::before{
+//    left: -10px;
+//    top: -10px;
+// }
+
+// .submitButton:hover {
+//     color: white;
+//     text-decoration: none;
+// }
+
+// .submitButton:focus,
+// .submitButton:active:focus {
+//     outline-offset: -2px;
+// }
+
+// .submitButton:active {
+//    top:5px;
+// }
+// .submitButton:hover {
+//     background: transparent none repeat scroll 0 0;
+//     color: white;
+  
+// }
+
+// .submitButton:hover::before {
+//     left: 0;
+//     top: 0;
+// }
+
+// <==== Submit Button ====>
  
 .songGallery{
 	list-style-type: none;
