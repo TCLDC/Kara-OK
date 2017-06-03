@@ -31,34 +31,28 @@ karaOK.fullPage = function() {
 }
 
 karaOK.eventHandlers = function () {
-
 	// BUTTONS
 	// user clicks downward chevron to move through page
-		$('#scrollDownToForm').on('click', function(){
-			$.fn.fullpage.moveTo(2);
-		})
+	$('#scrollDownToForm').on('click', function(){
+		$.fn.fullpage.moveTo(2);
+	})
 
 	// on KARA NO-K (Explicit content) user clicks to return to search
-		$('#backToSearch').on('click', function(){
-			$.fn.fullpage.moveTo(2);
-		})	
+	$('#backToSearch').on('click', function(){
+		$.fn.fullpage.moveTo(2);
+	})	
 
 	// 1. Receive user input.
-		$('form').on('submit', function(event) {
+	$('form').on('submit', function(event) {
 
 		event.preventDefault();
+		$('.songGallery').html();
 		var userTrackName = $('.trackName').val();
 		var userArtistName = $('.artistName').val();
 		var userLyricsName = $('.lyricsName').val();
 
 		karaOK.getSongInfo(userTrackName, userArtistName, userLyricsName);
-
-
-		  
-
-
-			
-		// console.log(userArtistName);
+	// console.log(userArtistName);
 	});
 
 	// 5. Receive user selection.
@@ -71,8 +65,6 @@ karaOK.eventHandlers = function () {
 		karaOK.selectedTrackName = $(this).find(".trName").text();
 
 		karaOK.getLyrics(trackID);
-
-
 	});
 
 	$("#addToPlaylist").on("click", function(){
@@ -93,8 +85,6 @@ karaOK.eventHandlers = function () {
 			$('.safePlayList').empty();
 
 			for (let key in playlist) {
-				console.log(key)
-				console.log(playlist[key])
 
 				var playlistAlbum = $("<p>").text(playlist[key].safeListAlbum).addClass('alName');
 				var playlistArtist = $("<p>").text(playlist[key].safelistArtist).addClass('arName'); 
@@ -106,23 +96,18 @@ karaOK.eventHandlers = function () {
 				playListItem = playListItem.data('firebaseId', key);
 				$(".safePlayList").append(playListItem);
 			}
-
-		//when user clicks on Add To Playlist, move down to playlist
+			//when user clicks on Add To Playlist, move down to playlist
 			$.fn.fullpage.moveTo(5);
 		});
-
 	});
 
 	$('.safePlayList').on('click', '.removeButton', function() {
-		console.log('clicked!');
 		var safeListRemoveData = $(this).parent('.playListItem').data('firebaseId');
 		console.log(safeListRemoveData);
 		const playlistEntry = firebase.database().ref(`/playlist/${safeListRemoveData}`);
 		playlistEntry.remove();
 	});
-
 }
-
 // 2. Use user input to make API request/AJAX request.
 // 3. Filter the results (ie search by lyrics only, language, format etc)
 karaOK.getSongInfo = function (track, artist, lyrics) {
@@ -158,22 +143,17 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 				var albumName = $('<p>').text(track.track.album_name).addClass('alName');
 				var artistName = $('<p>').text(track.track.artist_name).addClass('arName');
 				var trackName = $('<p>').text(track.track.track_name).addClass('trName');
-
 				var trackId = track.track.track_id;
+
+				console.log(track.track.album_coverart_100x100);
 
 				galleryUnit.data('track-id', trackId);
 				galleryUnit.append(coverArt, trackName, artistName, albumName);
-				// var galleryUnitFinal = galleryUnit.append(coverArt, trackName, artistName, albumName);
 				$('.songGallery').append(galleryUnit);
-				// $('.songGallery').append(galleryUnitFinal);
-
 			});
 		}
-
-
 	});
 }
-
 // 6. Make API request to track.lyrics.get, 
 karaOK.getLyrics = function (trackId) {
 	$.ajax({
@@ -204,10 +184,6 @@ karaOK.getLyrics = function (trackId) {
 		}
 	});	
 }
-
-karaOK.addToPlaylist = function(){
-
-};
 
 $(function(){
 	karaOK.init();
