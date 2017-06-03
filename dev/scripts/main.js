@@ -167,16 +167,21 @@ karaOK.getLyrics = function (trackId) {
 		}
 	}).then(function(result){
 		// console.log(result);
-		var lyrics = result.message.body.lyrics.lyrics_body;
-		console.log(lyrics);
-
 		// 7. Use javascript filter to scan the lyrics for profanity.
+		// 7a. Get lyrics from the Musixmatch API
+		var lyrics = result.message.body.lyrics.lyrics_body;
+		// console.log(lyrics);
+
+		// 7b. API only returns 30% of lyrics ergo we need to use the explicit number to determine if song is explicit (double verification)
+		var explicitRating = result.message.body.lyrics.explicit;
+		// console.log(explicitRating);
+		
 		var filterSwear = '';
 		var filterSwear = filter.contains(lyrics);
 		console.log(filterSwear);
 
-		// 8. IF there is profanity display red + feedback
-		if (filterSwear === true) {
+		// 8. IF there is profanity OR explicit rating is 1 then display negative + feedback
+		if (filterSwear === true || explicitRating === 1) {
 			$('.modalNo').addClass('modalDisplay');
 		// 9. IF ELSE display green + feedback
 		} else if (filterSwear === false) {
