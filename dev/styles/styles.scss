@@ -19,28 +19,15 @@ body{
 	margin: 0 auto;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-section {
-	padding: 100px 0;
-=======
-=======
 
 section {
 	padding: 100px 0;
 }
-
->>>>>>> 3e6bbe2049f4016a4c90ac502a847e16009cf032
 header {
 	background-image: url(../../assets/mainHero.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-<<<<<<< HEAD
->>>>>>> 651417c2c2561cdde9cd6aa3c44ae1a22d839646
-=======
-
->>>>>>> 3e6bbe2049f4016a4c90ac502a847e16009cf032
 }
 
 h1, h2, h3, h4 {
@@ -123,25 +110,15 @@ svg {
 	text-align: center;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-// User Input Section
-=======
-=======
-
 // User Input Section
 
->>>>>>> 3e6bbe2049f4016a4c90ac502a847e16009cf032
 .userInput {
 	background-image: url(../../assets/searchImage.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-<<<<<<< HEAD
->>>>>>> 651417c2c2561cdde9cd6aa3c44ae1a22d839646
-=======
->>>>>>> 3e6bbe2049f4016a4c90ac502a847e16009cf032
+
 
 .formContainer {
 	border: 5px solid #004E7B;
@@ -154,30 +131,15 @@ svg {
 .firstSearchBox, .secondSearchBox {
 	float: left;
 	width: calc(50% - 25px);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 3e6bbe2049f4016a4c90ac502a847e16009cf032
-	padding: 200px 50px;
-	input {
-		padding: 10px;
-	}
-<<<<<<< HEAD
-=======
 	margin: 0 15px;
 	padding: 150px 50px;
 	border: 5px solid $secondaryIdentityColor;
 	border-radius: 10px;
 	background-color: rgba(255, 255, 255, 0.25);
->>>>>>> 651417c2c2561cdde9cd6aa3c44ae1a22d839646
-=======
-
-	margin: 0 15px;
-	border: 5px solid $secondaryIdentityColor;
-	border-radius: 10px;
-	background-color: rgba(255, 255, 255, 0.25);
->>>>>>> 3e6bbe2049f4016a4c90ac502a847e16009cf032
+	padding: 200px 50px;
+	input {
+		padding: 10px;
+	}
 }
 
 .firstSearchBox {
@@ -208,17 +170,9 @@ svg {
 	background-color: transparent;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-// Input Results
-
-=======
-=======
 
 // Input Results
 
-
->>>>>>> 3e6bbe2049f4016a4c90ac502a847e16009cf032
 .subBox2 {
   position: relative;
   left: -10px;
@@ -296,11 +250,6 @@ svg {
 
 // <==== Submit Button ====>
  
-<<<<<<< HEAD
->>>>>>> 651417c2c2561cdde9cd6aa3c44ae1a22d839646
-=======
-
->>>>>>> 3e6bbe2049f4016a4c90ac502a847e16009cf032
 .songGallery{
 	list-style-type: none;
 	padding: 0;
