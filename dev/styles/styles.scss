@@ -4,7 +4,7 @@
 @import 'partials/fullPage';
 @import 'partials/header';
 @import 'partials/userInput';
-@import 'partials/results';
+@import 'partials/inputResults';
 @import 'partials/playList';
 
 // General Styles
@@ -112,30 +112,4 @@ svg {
 	cursor: pointer;
 	margin-top: 8%;
 	text-align: center;
-}
-
-.songGallery{
-	list-style-type: none;
-	padding: 0;
-	.galleryUnit {
-		display: inline-block;
-		width: calc(20% - (80px / 5 ));
-		height: 190px;
-		margin-right: 20px;
-		margin-bottom: 20px;
-		text-align: center;
-		overflow: hidden;
-	}
-	.galleryUnit:nth-of-type(5n) {
-		margin-right: 0;
-	}
-	.trName {
-		height: 22px;
-		overflow: hidden;
-		font-weight:bold;
-	}
-	img {
-		width: 100%;
-		max-width:100px;
-	}
 }
