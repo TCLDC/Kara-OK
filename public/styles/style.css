@@ -212,18 +212,33 @@ svg {
   margin-top: 8%;
   text-align: center; }
 
+.userInput {
+  background-image: url(../../assets/searchImage.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
 .formContainer {
-  border: 2px solid black;
+  border: 5px solid #004E7B;
+  border-radius: 10px;
   text-align: center;
-  height: 80%; }
+  height: 50%;
+  margin-bottom: 5%; }
 
 .firstSearchBox, .secondSearchBox {
-  border: 2px solid black;
   float: left;
   width: calc(50% - 25px);
+
   padding: 200px 50px; }
   .firstSearchBox input, .secondSearchBox input {
     padding: 10px; }
+
+  margin: 0 15px;
+  padding: 150px 50px;
+  border: 5px solid #65C5DF;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.25); }
+
 
 .firstSearchBox {
   margin-right: 50px; }
@@ -237,8 +252,30 @@ svg {
   text-align: center;
   color: #F0C31A; }
 
-.submitButton {
-  display: block; }
+.subBox1 {
+  display: inline-block;
+  border: 2px solid white;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 25px 40px;
+  color: white;
+  text-transform: uppercase;
+  background-color: transparent; }
+
+.subBox2 {
+  position: relative;
+  left: -10px;
+  top: -10px; }
+  .subBox2:after {
+    content: '';
+    display: inherit;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 50px;
+    left: 50px; }
 
 .songGallery {
   list-style-type: none;
