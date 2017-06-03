@@ -1,0 +1,49 @@
+.songGallery{
+	list-style-type: none;
+	padding: 0;
+	.galleryUnit {
+		display: inline-block;
+		width: calc(20% - (80px / 5 ));
+		height: 190px;
+		margin-right: 20px;
+		margin-bottom: 20px;
+		text-align: center;
+		overflow: hidden;
+	}
+	.galleryUnit:nth-of-type(5n) {
+		margin-right: 0;
+	}
+	.trName {
+		height: 22px;
+		overflow: hidden;
+		font-weight:bold;
+	}
+	img {
+		width: 100%;
+		max-width:100px;
+	}
+}
+
+// MODAL RESULTS
+
+.modal {
+	background-color: $alternateIdentityColor;
+}
+
+.modalYes{
+	background-color: forestgreen;
+	display: none;
+}
+
+.modalNo{
+	background-color: firebrick;
+	display: none;
+}
+
+.modalDisplay {
+	display: block;
+}
+
+section.results .wrapper {
+	position: relative;
+}
