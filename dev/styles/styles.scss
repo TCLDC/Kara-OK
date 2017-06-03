@@ -3,6 +3,8 @@
 @import 'partials/variables';
 // @import 'partials/fullPage';
 
+// General Styles
+
 html{
 	font-size: 62.5%;
 }
@@ -17,27 +19,31 @@ body{
 	margin: 0 auto;
 }
 
-// header, section {
-// 	height: 100vh;
-// }
+<<<<<<< HEAD
+<<<<<<< HEAD
+section {
+	padding: 100px 0;
+=======
+=======
 
+section {
+	padding: 100px 0;
+}
+
+>>>>>>> 3e6bbe2049f4016a4c90ac502a847e16009cf032
 header {
 	background-image: url(../../assets/mainHero.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+<<<<<<< HEAD
+>>>>>>> 651417c2c2561cdde9cd6aa3c44ae1a22d839646
+=======
+
+>>>>>>> 3e6bbe2049f4016a4c90ac502a847e16009cf032
 }
 
-svg {
-	fill: $mainIdentityColor;
-	width: 100px;
-	height: 100px;
-	position: fixed;
-	top: 10px;
-	left: 0;
-}
-
-h1, h2, h3, h4{
+h1, h2, h3, h4 {
 	font-family: $titleFont;
 	color:$mainIdentityColor;
 	margin: 0;
@@ -55,19 +61,30 @@ h2 {
 	color: white;
 }
 
-h3, h4{
+h3, h4 {
 	font-size: 1.8rem;
 }
 
-p{
+p {
 	margin: 0;	
 	padding: 0;
 }
+// Homepage
 
+header {
+	background-image: url(../../assets/mainHero.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
-
-p.trName{
-	font-weight:bold;
+svg {
+	fill: $mainIdentityColor;
+	width: 100px;
+	height: 100px;
+	position: fixed;
+	top: 10px;
+	left: 0;
 }
 
 .box1 {
@@ -79,20 +96,20 @@ p.trName{
 }
 
 .box2 {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  &:after {
-    content: '';
-    display: inherit;
-    border: 5px solid white;
-    border-radius: 10px;
-    width: inherit;
-    height: inherit;
-    position: absolute;
-    top: 50px;
-    left: 50px;
-  }
+	height: 100%;
+	width: 100%;
+	position: relative;
+	&:after {
+		content: '';
+		display: inherit;
+		border: 5px solid white;
+		border-radius: 10px;
+		width: inherit;
+		height: inherit;
+		position: absolute;
+		top: 50px;
+		left: 50px;
+	}
 }
 
 .iconHolder {
@@ -106,17 +123,61 @@ p.trName{
 	text-align: center;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+// User Input Section
+=======
+=======
+
+// User Input Section
+
+>>>>>>> 3e6bbe2049f4016a4c90ac502a847e16009cf032
+.userInput {
+	background-image: url(../../assets/searchImage.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+<<<<<<< HEAD
+>>>>>>> 651417c2c2561cdde9cd6aa3c44ae1a22d839646
+=======
+>>>>>>> 3e6bbe2049f4016a4c90ac502a847e16009cf032
+
 .formContainer {
-	border: 2px solid black;
+	border: 5px solid #004E7B;
+	border-radius: 10px;
 	text-align: center;
-	height: 80%;
+	height: 50%;
+	margin-bottom: 5%;
 }
 
 .firstSearchBox, .secondSearchBox {
-	border: 2px solid black;
 	float: left;
 	width: calc(50% - 25px);
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3e6bbe2049f4016a4c90ac502a847e16009cf032
 	padding: 200px 50px;
+	input {
+		padding: 10px;
+	}
+<<<<<<< HEAD
+=======
+	margin: 0 15px;
+	padding: 150px 50px;
+	border: 5px solid $secondaryIdentityColor;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.25);
+>>>>>>> 651417c2c2561cdde9cd6aa3c44ae1a22d839646
+=======
+
+	margin: 0 15px;
+	border: 5px solid $secondaryIdentityColor;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.25);
+>>>>>>> 3e6bbe2049f4016a4c90ac502a847e16009cf032
 }
 
 .firstSearchBox {
@@ -124,7 +185,7 @@ p.trName{
 }
 
 .inputBox {
-	
+	margin-bottom: 20px;
 }
 
 .userInput h2 {
@@ -134,21 +195,139 @@ p.trName{
 	color: $mainIdentityColor;
 }
 
-.submitButton {
-	display: block;
+// <==== Submit Button Test ====>
+
+.subBox1 {
+	display: inline-block;
+	border: 2px solid white;
+	border-radius: 10px;
+	font-size: 16px;
+	padding: 25px 40px;
+	color: white;
+	text-transform: uppercase;
+	background-color: transparent;
 }
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+// Input Results
+
+=======
+=======
+
+// Input Results
+
+
+>>>>>>> 3e6bbe2049f4016a4c90ac502a847e16009cf032
+.subBox2 {
+  position: relative;
+  left: -10px;
+   top: -10px;
+  &:after {
+    content: '';
+    display: inherit;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
+}
+
+// <==== Submit Button Test ====>
+
+// <==== Submit Button ====>
+
+// .submitButton {
+//     background-color: transparent;
+//     position: relative;
+//     display: inline-block;
+//     font-family: $bodyFont;
+//     margin-bottom: 0;
+//     text-align: center;
+//     vertical-align: middle;
+//     border: 2px solid white;
+//     color: white;
+//     border-radius: 10px;
+//     font-size: 16px;
+//     padding: 25px 40px;
+// }
+
+// .submitButton::before {
+//     border: 2px solid white;
+//     content: "";
+//     display: block;
+//     height: 100%;
+//     position: absolute;
+//     transition: all 0.3s ease 0s;
+//     width: 100%;
+// }
+
+// .submitButton::before{
+//    left: -10px;
+//    top: -10px;
+// }
+
+// .submitButton:hover {
+//     color: white;
+//     text-decoration: none;
+// }
+
+// .submitButton:focus,
+// .submitButton:active:focus {
+//     outline-offset: -2px;
+// }
+
+// .submitButton:active {
+//    top:5px;
+// }
+// .submitButton:hover {
+//     background: transparent none repeat scroll 0 0;
+//     color: white;
+  
+// }
+
+// .submitButton:hover::before {
+//     left: 0;
+//     top: 0;
+// }
+
+// <==== Submit Button ====>
  
+<<<<<<< HEAD
+>>>>>>> 651417c2c2561cdde9cd6aa3c44ae1a22d839646
+=======
+
+>>>>>>> 3e6bbe2049f4016a4c90ac502a847e16009cf032
 .songGallery{
 	list-style-type: none;
 	padding: 0;
-	li{
-	display: inline-block;
+	.galleryUnit {
+		display: inline-block;
+		width: calc(20% - (80px / 5 ));
+		height: 190px;
+		margin-right: 20px;
+		margin-bottom: 20px;
+		text-align: center;
+		overflow: hidden;
 	}
-	img{
+	.galleryUnit:nth-of-type(5n) {
+		margin-right: 0;
+	}
+	.trName {
+		height: 22px;
+		overflow: hidden;
+		font-weight:bold;
+	}
+	img {
 		width: 100%;
-		max-width:50px;
+		max-width:100px;
 	}
 }
+
+// MODAL RESULTS
 
 .modal {
 	background-color: $alternateIdentityColor;
