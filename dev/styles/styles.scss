@@ -19,10 +19,10 @@ body{
 	margin: 0 auto;
 }
 
-
 section {
 	padding: 100px 0;
 }
+
 header {
 	background-image: url(../../assets/mainHero.jpg);
 	background-position: center;
@@ -119,7 +119,6 @@ svg {
 	background-size: cover;
 }
 
-
 .formContainer {
 	border: 5px solid #004E7B;
 	border-radius: 10px;
@@ -131,12 +130,13 @@ svg {
 .firstSearchBox, .secondSearchBox {
 	float: left;
 	width: calc(50% - 25px);
+
 	margin: 0 15px;
 	padding: 150px 50px;
 	border: 5px solid $secondaryIdentityColor;
 	border-radius: 10px;
 	background-color: rgba(255, 255, 255, 0.25);
-	padding: 200px 50px;
+
 	input {
 		padding: 10px;
 	}
@@ -169,7 +169,6 @@ svg {
 	text-transform: uppercase;
 	background-color: transparent;
 }
-
 
 // Input Results
 
@@ -249,7 +248,7 @@ svg {
 // }
 
 // <==== Submit Button ====>
- 
+
 .songGallery{
 	list-style-type: none;
 	padding: 0;
