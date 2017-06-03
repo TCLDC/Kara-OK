@@ -46,7 +46,7 @@ karaOK.eventHandlers = function () {
 	$('form').on('submit', function(event) {
 
 		event.preventDefault();
-		$('.songGallery').html();
+		$('.songGallery').html('');
 		var userTrackName = $('.trackName').val();
 		var userArtistName = $('.artistName').val();
 		var userLyricsName = $('.lyricsName').val();
