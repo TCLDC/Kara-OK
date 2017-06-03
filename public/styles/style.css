@@ -203,6 +203,9 @@ p.trName {
     top: 50px;
     left: 50px; }
 
+.iconHolder {
+  text-align: center; }
+
 .fa-angle-down {
   color: white;
   cursor: pointer;
@@ -217,7 +220,11 @@ p.trName {
 .firstSearchBox, .secondSearchBox {
   border: 2px solid black;
   float: left;
-  width: 50%; }
+  width: calc(50% - 25px);
+  padding: 200px 50px; }
+
+.firstSearchBox {
+  margin-right: 50px; }
 
 .userInput h2 {
   font-size: 80px;
