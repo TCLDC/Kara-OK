@@ -89,7 +89,7 @@ karaOK.eventHandlers = function () {
 				var playlistAlbum = $("<p>").text(playlist[key].safeListAlbum).addClass('alName');
 				var playlistArtist = $("<p>").text(playlist[key].safelistArtist).addClass('arName'); 
 				var playlistTrack = $("<p>").text(playlist[key].safeListTrack).addClass('trName');
-				var removePlaylistItem = $("<button>").addClass('removeButton').text('-');
+				var removePlaylistItem = $("<button>").addClass('removeButton').text('x');
 
 				var playListItem = $("<li>").append(playlistTrack, playlistArtist, playlistAlbum, removePlaylistItem).addClass('playListItem');
 				
@@ -128,7 +128,7 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 	}).then(function (result){
 		// 4. Display API request results on screen
 		// 	(track_id, track_name, explicit, album_name, artist_name, album_coverart_100x100, track_share_url)
-		console.log(result);
+		// console.log(result);
 		var trackList = result.message.body.track_list
 
 		if (trackList.length === 0) {
