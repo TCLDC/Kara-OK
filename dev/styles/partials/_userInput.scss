@@ -10,14 +10,14 @@
 	background-size: cover;
 	z-index: -1;
 	&:after {
-		// content: '';
-		// position: absolute;
-		// top: 0;
-		// bottom: 0;
-		// left: 0;
-		// right: 0;
-		// // background-color: rgba(240, 195, 26, 0.25);
-		// z-index: -1;
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: rgba(0, 0, 0, 0.25);
+		z-index: -1;
 	}
 }
 
@@ -33,10 +33,11 @@
 	float: left;
 	display: inline-block;
 	width: calc(50% - 25px);
-	padding: 150px 50px;
+	padding: 50px 50px;
 	border: 5px solid $secondaryIdentityColor;
 	border-radius: 10px;
-	background-color: rgba(101,197,223, 0.25);
+	background-color: rgba(255,255,255, 0.25);
+	height: 300px;
 	input {
 		padding: 10px;
 		// background-color: rgba(101,197,223, 0.4);
@@ -49,7 +50,7 @@
 		}
 	}
 	label {
-		color: $alternateIdentityColor; 
+		color: $mainIdentityColor; 
 	}
 }
 
@@ -68,96 +69,20 @@
 	color: $mainIdentityColor;
 }
 
-// <==== Submit Button Test ====>
-
 .buttonHolder {
 	width: 100%;
 	clear: both;
 }
 
 .subBox1 {
-	background-color: $secondaryIdentityColor;
+	background-color: transparent;
 	display: inline-block;
-	margin-top: 15px;
+	margin-top: 40px;
 	padding: 25px 40px;
-	border: 2px solid $alternateIdentityColor;
+	border: 3px solid $alternateIdentityColor;
 	border-radius: 10px;
 	font-size: 16px;
-	color: $alternateIdentityColor;
+	color: white;
 	text-transform: uppercase;
 
 }
-
-// Input Results
-
-// .subBox2 {
-// 	position: relative;
-// 	&:after {
-// 		content: '';
-// 		border: 2px solid white;
-// 		border-radius: 10px;
-// 		position: absolute;
-// 		top: 50px;
-// 		left: 50px;
-//   }
-// }
-
-// <==== Submit Button Test ====>
-
-// <==== Submit Button ====>
-
-// .submitButton {
-//     background-color: transparent;
-//     position: relative;
-//     display: inline-block;
-//     font-family: $bodyFont;
-//     margin-bottom: 0;
-//     text-align: center;
-//     vertical-align: middle;
-//     border: 2px solid white;
-//     color: white;
-//     border-radius: 10px;
-//     font-size: 16px;
-//     padding: 25px 40px;
-// }
-
-// .submitButton::before {
-//     border: 2px solid white;
-//     content: "";
-//     display: block;
-//     height: 100%;
-//     position: absolute;
-//     transition: all 0.3s ease 0s;
-//     width: 100%;
-// }
-
-// .submitButton::before{
-//    left: -10px;
-//    top: -10px;
-// }
-
-// .submitButton:hover {
-//     color: white;
-//     text-decoration: none;
-// }
-
-// .submitButton:focus,
-// .submitButton:active:focus {
-//     outline-offset: -2px;
-// }
-
-// .submitButton:active {
-//    top:5px;
-// }
-// .submitButton:hover {
-//     background: transparent none repeat scroll 0 0;
-//     color: white;
-  
-// }
-
-// .submitButton:hover::before {
-//     left: 0;
-//     top: 0;
-// }
-
-// <==== Submit Button ====>

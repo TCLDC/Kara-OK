@@ -9,11 +9,15 @@
 
 // General Styles
 
-html{
+// button {
+// 	letter-spacing: 2px;
+// }
+
+html {
 	font-size: 62.5%;
 }
 
-body{
+body {
 	font-size:1.8rem;
 	font-family: $bodyFont;
 }
@@ -24,7 +28,7 @@ body{
 }
 
 section {
-	// padding: 100px 0;
+	height: 100vh;
 }
 
 header {
