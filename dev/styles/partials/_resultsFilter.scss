@@ -1,5 +1,12 @@
 // RESULTS
 
+.resultsFilter {
+	background-image: url(../../../assets/lukas-budimaier-83358.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .results {
 	background-color: $alternateIdentityColor;
 }
@@ -7,11 +14,21 @@
 .modalYes{
 	background-color: forestgreen;
 	display: none;
+	position: absolute;
+	top: 20%;
+	bottom: 20%;
+	left: 20%;
+	right: 20%;
 }
 
 .modalNo{
 	background-color: firebrick;
 	display: none;
+	position: absolute;
+	top: 20%;
+	bottom: 20%;
+	left: 20%;
+	right: 20%;
 }
 
 .modalDisplay {
