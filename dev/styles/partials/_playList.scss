@@ -26,7 +26,7 @@
 }
 
 .fa-music{
-	padding-left:4%;
+	padding: 0 2% 0 4%;
 	color: $mainIdentityColor; 
 }
 
@@ -37,6 +37,27 @@
 	border-radius: 10px;
 	background: rgba(255,255,255,0.3);
 	padding: 4%;
+	.alName, .arName, .trName{
+		color: #fff;
+		font-size: 1.4rem;
+		letter-spacing: .1rem;
+
+	}
+
+	.alName{
+		width: 40%;
+	}
+
+	.arName{
+		width: 20%;
+	}
+
+	.trName{
+		font-weight: 700;
+		font-style:italic;
+		margin-right: 2%;
+		width: 20%;
+	}
 	.alName, .arName{
 		position: relative;
 		padding: 0 4%;
@@ -63,15 +84,7 @@
 	background-color: rgb(101,197,223);
 }
 
-.alName, .arName, .trName{
-	color: #fff;
-	letter-spacing: .1rem;
-}
 
-.trName{
-	font-weight: 700;
-	font-style:italic;
-}
 
 .removeButton{
 	position: absolute;

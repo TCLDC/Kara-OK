@@ -40,6 +40,7 @@ karaOK.eventHandlers = function () {
 	// on KARA NO-K (Explicit content) user clicks to return to search
 	$('#backToSearch').on('click', function(){
 		$.fn.fullpage.moveTo(2);
+		$(".modalNo").removeClass("modalDisplay");
 	})	
 
 	// 1. Receive user input.
@@ -68,7 +69,7 @@ karaOK.eventHandlers = function () {
 	});
 
 	$("#addToPlaylist").on("click", function(){
-		
+		$(".modalYes").removeClass("modalDisplay");
 		// Move the li add to DOM section to for loop so list is created from firebase
 		var safeListItem = {
 			safeListAlbum: karaOK.selectedAlbumName,
@@ -86,14 +87,14 @@ karaOK.eventHandlers = function () {
 			//creates playlist
 			for (let key in playlist) {
 
-				// var playListIcon = ("<i>").text("").addClass("fa-music");
-				// Is this the right way to add the icon if we also put thevar name down in the playListItem? I tried and it didn't work
+				var playListIcon = $("<i>").addClass("fa").addClass("fa-music");
+				// Is this the right way to add the icon if we also put the var name down in the playListItem? I tried and it didn't work
 				var playlistAlbum = $("<p>").text(playlist[key].safeListAlbum).addClass('alName');
 				var playlistArtist = $("<p>").text(playlist[key].safelistArtist).addClass('arName'); 
 				var playlistTrack = $("<p>").text(playlist[key].safeListTrack).addClass('trName');
 				var removePlaylistItem = $("<button>").addClass('removeButton').text('x');
 
-				var playListItem = $("<li>").append(playlistTrack, playlistArtist, playlistAlbum, removePlaylistItem).addClass('playListItem');
+				var playListItem = $("<li>").append(playListIcon, playlistTrack, playlistArtist, playlistAlbum, removePlaylistItem).addClass('playListItem');
 				
 				playListItem = playListItem.data('firebaseId', key);
 				$(".safePlayList").append(playListItem);
