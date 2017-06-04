@@ -5,6 +5,7 @@
 	<title>Kara-OK</title>
 	<link href="https://fonts.googleapis.com/css?family=Oswald:700|Roboto:400,500,700i" rel="stylesheet">
 	<link rel="stylesheet" href="./public/styles/style.css">
+	<link rel=“stylesheet” href="./vendors/styles/icofont.css">
 	<link rel=“stylesheet” href="./vendors/styles/jquery.fullPage.css">
 </head>
 <body>
@@ -27,7 +28,7 @@
 					<i class="fa fa-angle-down fa-4x" id="scrollDownToForm" aria-hidden="true"></i>
 
 				</div>
-			</div>
+			</div><!--svg hidden in collapsed div here for readability-->
 		</header>
 
 		<section class="section userInput" data-anchor="slide2">
@@ -66,14 +67,16 @@
 			</div>
 		</section>
 
-		<section class="section results" data-anchor="slide4">
+		<section class="section resultsFilter" data-anchor="slide4">
 				<div class="wrapper">
 					<div class="modal modalYes"><!--yes it's explicit-->
 						<h2>Kara OK</h2>
+						<i class="icofont icofont-tick-boxed"></i>
 						<button class="resultsButton" id="addToPlaylist">Add to OK List</button>
 					</div>
 					<div class="modal modalNo"><!--No it's SFW-->
 						<h2>Kara NO-K</h2>
+						<i class="icofont icofont-exclamation-square"></i>
 						<button class="resultsButton" id="backToSearch">That song's lyrics are not Ok.</button>
 					</div>
 				</div>
@@ -81,7 +84,7 @@
 
 		<section class="section firebasePlaylist" data-anchor="slide5">
 			<div class="wrapper">
-				<h3>Kara-OK List</h3>
+				<h2>Kara-OK List</h2>
 				<ul class="safePlayList">
 					<!--song selections get added dynamically-->
 				</ul>
@@ -89,7 +92,7 @@
 			<footer>
 				<div class="wrapper">
 					<p>Created by Septembre Anderson, Vincent Chevalier and Will Lotosky.</p>
-					<p>Images via <a href="https://www.ko-foto.de/">Kai Oberhäuser</a>, <a href="https://unsplash.com/@richie_lugo">Richie Lugo</a>, <a href="https://unsplash.com/@greyson_joralemon1">Greyson Joralemon</a></p>
+					<p>Images via <a href="https://www.ko-foto.de/">Kai Oberhäuser</a>, <a href="https://unsplash.com/@richie_lugo">Richie Lugo</a>, <a href="https://unsplash.com/@greyson_joralemon1">Greyson Joralemon</a>, Jeff Sheldon <a href="https://unsplash.com/@ugmonk"></a></p>
 					<p>Logo via <a href="https://thenounproject.com/made.somewhere/">Made by Made</a> and</p>
 				</div>
 			</footer>

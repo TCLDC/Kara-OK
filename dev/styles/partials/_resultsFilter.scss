@@ -1,0 +1,23 @@
+// RESULTS
+
+.results {
+	background-color: $alternateIdentityColor;
+}
+
+.modalYes{
+	background-color: forestgreen;
+	display: none;
+}
+
+.modalNo{
+	background-color: firebrick;
+	display: none;
+}
+
+.modalDisplay {
+	display: block;
+}
+
+section.results .wrapper {
+	position: relative;
+}

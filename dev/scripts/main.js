@@ -86,6 +86,8 @@ karaOK.eventHandlers = function () {
 			//creates playlist
 			for (let key in playlist) {
 
+				// var playListIcon = ("<i>").text("").addClass("fa-music");
+				// Is this the right way to add the icon if we also put thevar name down in the playListItem? I tried and it didn't work
 				var playlistAlbum = $("<p>").text(playlist[key].safeListAlbum).addClass('alName');
 				var playlistArtist = $("<p>").text(playlist[key].safelistArtist).addClass('arName'); 
 				var playlistTrack = $("<p>").text(playlist[key].safeListTrack).addClass('trName');
