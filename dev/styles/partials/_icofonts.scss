@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'IcoFont';
+    src: url('../../assets/fonts/icofonts/icofont.eot') format("eot");
+    src: url('../../assets/fonts/icofonts/icofont.ttf') format('truetype');
+}
+
+.icofont-tick-boxed:before {
+	content: "\f0f3";
+}
+
+.icofont-exclamation-square:before {
+	content: "\efeb";
+}

@@ -1,21 +1,29 @@
 .firebasePlaylist{
 	position: relative;
-	background: url(../../assets/lukas-budimaier-83358.jpg);
+	background: url(../../assets/jeff-sheldon-3225.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	h2{
+		color:$mainIdentityColor;
+	}
 }
 
 .fa-music{
 	padding-left:4%;
-	color: #F0C31A; /*$mainIdentityColor*/
+	color: $mainIdentityColor; 
 }
 
 .safePlayList{
 	list-style:none;
 	padding: 0;
+	border: 3px solid $alternateIdentityColor; /*$alternateIdentityColor*/
+	border-radius: 10px;
+	background: rgba(255,255,255,0.3);
+	padding: 4%;
 	.alName, .arName{
 		position: relative;
+		padding: 0 4%;
 		&::before, {
 			position: absolute;
 			content: "|";
@@ -36,7 +44,7 @@
 	border: 3px solid #004E7B; /*$alternateIdentityColor*/
 	border-radius: 10px;
 	margin-bottom: 5px;
-	background-color: rgba(255,255,255,0.5);
+	background-color: rgb(101,197,223);
 }
 
 .alName, .arName, .trName{
@@ -51,7 +59,7 @@
 
 .removeButton{
 	position: absolute;
-	font-family:  'Roboto', sans-serif; /*$bodyFont*/
+	font-family: $bodyFont; 
 	font-weight: 700;
 	line-height: 1rem;
 	width: 20px;
@@ -61,7 +69,7 @@
 	transform: translateY(-50%);
 	border-style: none;
 	border-radius: 5px;
-	background-color: #F0C31A; /*$mainIdentityColor*/;
+	background-color: $mainIdentityColor; 
 	color:#fff;
 }
 
