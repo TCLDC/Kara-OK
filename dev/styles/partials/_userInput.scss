@@ -33,10 +33,11 @@
 	float: left;
 	display: inline-block;
 	width: calc(50% - 25px);
-	padding: 150px 50px;
+	padding: 50px 50px;
 	border: 5px solid $secondaryIdentityColor;
 	border-radius: 10px;
-	background-color: rgba(101,197,223, 0.25);
+	background-color: rgba(255,255,255, 0.25);
+	height: 300px;
 	input {
 		padding: 10px;
 		// background-color: rgba(101,197,223, 0.4);
@@ -49,7 +50,7 @@
 		}
 	}
 	label {
-		color: $alternateIdentityColor; 
+		color: $mainIdentityColor; 
 	}
 }
 
@@ -78,9 +79,9 @@
 .subBox1 {
 	background-color: $secondaryIdentityColor;
 	display: inline-block;
-	margin-top: 15px;
+	margin-top: 40px;
 	padding: 25px 40px;
-	border: 2px solid $alternateIdentityColor;
+	border: 5px solid $alternateIdentityColor;
 	border-radius: 10px;
 	font-size: 16px;
 	color: $alternateIdentityColor;
