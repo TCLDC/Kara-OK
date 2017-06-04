@@ -11,24 +11,26 @@
 	background-color: $alternateIdentityColor;
 }
 
-.modalYes{
-	background-color: forestgreen;
+.modal {
 	display: none;
 	position: absolute;
 	top: 20%;
 	bottom: 20%;
 	left: 20%;
-	right: 20%;
+	right: 20%;	
+	text-align: center;
+	.resultsButton {
+		display: inline-block;
+	}
+}
+
+.modalYes{
+	background-color: forestgreen;
+	
 }
 
 .modalNo{
 	background-color: firebrick;
-	display: none;
-	position: absolute;
-	top: 20%;
-	bottom: 20%;
-	left: 20%;
-	right: 20%;
 }
 
 .modalDisplay {

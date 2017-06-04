@@ -32,7 +32,7 @@
 .firstSearchBox, .secondSearchBox {
 	float: left;
 	display: inline-block;
-	width: calc(50% - 20px);
+	width: calc(50% - 25px);
 	padding: 40px 50px;
 	border: 5px solid $secondaryIdentityColor;
 	border-radius: 10px;
@@ -41,7 +41,7 @@
 	input {
 		padding: 10px;
 		color: $alternateIdentityColor;
-		border: 2px solid $$secondaryIdentityColor;
+		border: 2px solid $secondaryIdentityColor;
 		border-radius: 5px;
 		width: 90%;
 		&:focus {
