@@ -139,7 +139,7 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 
 				var galleryUnit = $('<li>').addClass('galleryUnit');
 
-				// var coverArt = $('<img>').attr('src', track.track.album_coverart_100x100);
+				var coverArt = $('<img>').attr('src', track.track.album_coverart_100x100);
 				var albumName = $('<p>').text(track.track.album_name).addClass('alName');
 				var artistName = $('<p>').text(track.track.artist_name).addClass('arName');
 				var trackName = $('<p>').text(track.track.track_name).addClass('trName');
