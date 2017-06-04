@@ -1,10 +1,12 @@
 @import 'partials/variables';
 @import 'partials/setup';
 @import 'partials/typography';
+@import 'partials/icofonts';
 @import 'partials/fullPage';
 @import 'partials/header';
 @import 'partials/userInput';
 @import 'partials/inputResults';
+@import 'partials/resultsFilter';
 @import 'partials/playList';
 
 // General Styles
@@ -16,6 +18,9 @@ html {
 body {
 	font-size:1.8rem;
 	font-family: $bodyFont;
+	&:focus {
+		outline: none;
+	}
 }
 
 .wrapper {
@@ -60,56 +65,68 @@ p {
 	margin: 0;	
 	padding: 0;
 }
+
+button {
+	background-color: transparent;
+	display: inline-block;
+	margin-top: 40px;
+	padding: 25px 40px;
+	border: 3px solid $alternateIdentityColor;
+	border-radius: 10px;
+	font-size: 16px;
+	color: white;
+	text-transform: uppercase;
+}
 // Homepage
 
-header {
-	background-image: url(../../assets/mainHero.jpg);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
+// header {
+// 	background-image: url(../../assets/mainHero.jpg);
+// 	background-position: center;
+// 	background-repeat: no-repeat;
+// 	background-size: cover;
+// }
 
-svg {
-	fill: $mainIdentityColor;
-	width: 100px;
-	height: 100px;
-	position: fixed;
-	top: 10px;
-	left: 0;
-}
+// svg {
+// 	fill: $mainIdentityColor;
+// 	width: 100px;
+// 	height: 100px;
+// 	position: fixed;
+// 	top: 10px;
+// 	left: 0;
+// }
 
-.box1 {
-	display: inline-block;
-	border: 5px solid $alternateIdentityColor;
-	border-radius: 10px;
-	height: 70%;
-	margin-top: 10%;
-}
+// .box1 {
+// 	display: inline-block;
+// 	border: 5px solid $alternateIdentityColor;
+// 	border-radius: 10px;
+// 	height: 70%;
+// 	margin-top: 10%;
+// }
 
-.box2 {
-	height: 100%;
-	width: 100%;
-	position: relative;
-	&:after {
-		content: '';
-		display: inherit;
-		border: 5px solid white;
-		border-radius: 10px;
-		width: inherit;
-		height: inherit;
-		position: absolute;
-		top: 50px;
-		left: 50px;
-	}
-}
+// .box2 {
+// 	height: 100%;
+// 	width: 100%;
+// 	position: relative;
+// 	&:after {
+// 		content: '';
+// 		display: inherit;
+// 		border: 5px solid white;
+// 		border-radius: 10px;
+// 		width: inherit;
+// 		height: inherit;
+// 		position: absolute;
+// 		top: 50px;
+// 		left: 50px;
+// 	}
+// }
 
-.iconHolder {
-	text-align: center;
-}
+// .iconHolder {
+// 	text-align: center;
+// }
 
-.fa-angle-down{
-	color: white;
-	cursor: pointer;
-	margin-top: 8%;
-	text-align: center;
-}
+// .fa-angle-down{
+// 	color: white;
+// 	cursor: pointer;
+// 	margin-top: 8%;
+// 	text-align: center;
+// }
