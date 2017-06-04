@@ -1,5 +1,66 @@
 .firebasePlaylist{
 	position: relative;
+	background-color: #999;
+}
+
+.fa-music{
+	padding-left:4%;
+	color: #F0C31A; /*$mainIdentityColor*/
+}
+
+.safePlayList{
+	list-style:none;
+	padding: 0;
+}
+
+.safePlayList li p, .safePlayList li i, .safePlayList button {
+	display: inline-block;
+	text-align: center;
+}
+
+.safePlayList li{
+	position: relative;
+	padding: 2%;
+	border: 3px solid #004E7B; /*$alternateIdentityColor*/
+	border-radius: 10px;
+	margin-bottom: 5px;
+	background-color: rgba(255,255,255,0.5);
+}
+
+.alName, .arName, .trName{
+	color: #fff;
+	letter-spacing: .1rem;
+}
+
+.trName{
+	font-weight: 700;
+	font-style:italic;
+}
+
+.alName, .arName{
+	position: relative;
+	&::before, {
+		position: absolute;
+		content: "|";
+		color:#fff;
+		left: 2%;
+	}
+}
+
+.removeButton{
+	position: absolute;
+	font-family:  'Roboto', sans-serif; /*$bodyFont*/
+	font-weight: 700;
+	line-height: 1rem;
+	width: 20px;
+	height: 20px;
+	right: 2%;
+	top:50%;
+	transform: translateY(-50%);
+	border-style: none;
+	border-radius: 5px;
+	background-color: #F0C31A; /*$mainIdentityColor*/;
+	color:#fff;
 }
 
 footer{
