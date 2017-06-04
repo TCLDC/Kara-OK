@@ -4,7 +4,7 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-color: rgba(255, 255, 255, 0.55);
+	background-color: rgba(61, 60, 60, 0.55);
 	padding: 0;
 	h2 {
 		font-size: 80px;
@@ -15,22 +15,25 @@
 	.resultsWrapper {
 		border: 5px solid $alternateIdentityColor;
 		border-radius: 10px;
-		background-color: rgba(255, 255, 255, 0.25);
+		background-color: rgba(56, 55, 55, 0.25);
 		.trName {
 			font-family: $bodyFont;
 			font-size: 22px;
 			color: $alternateIdentityColor;
+			line-height: 1.5;
 		}
 		.arName {
 			font-family: $bodyFont;
 			font-size: 18px;
 			color: $alternateIdentityColor;
+			line-height: 1.5;
 		}
 		.alName {
 			font-family: $bodyFont;
 			font-size: 16px;
 			font-style: italic;
 			color: $secondaryIdentityColor;
+			line-height: 1.5;
 		}
 	}
 }
@@ -51,12 +54,12 @@
 		margin-right: 0;
 	}
 	.trName {
-		height: 22px;
+		height: 25px;
 		overflow: hidden;
 		font-weight:bold;
 	}
 	img {
 		width: 100%;
-		max-width:100px;
+		max-width: 50px;
 	}
 }
