@@ -42,6 +42,9 @@
 			font-size: 18px;
 			color: $alternateIdentityColor;
 			line-height: 1.5;
+			&::before {
+				display: none;
+			}
 		}
 		.alName {
 			font-family: $bodyFont;
@@ -49,6 +52,9 @@
 			font-style: italic;
 			color: $secondaryIdentityColor;
 			line-height: 1.5;
+			&::before {
+				display: none;
+			}
 		}
 	}
 }
