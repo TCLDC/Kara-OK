@@ -1,6 +1,9 @@
 .firebasePlaylist{
 	position: relative;
-	background-color: #999;
+	background: url(../../assets/lukas-budimaier-83358.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .fa-music{
@@ -11,6 +14,15 @@
 .safePlayList{
 	list-style:none;
 	padding: 0;
+	.alName, .arName{
+		position: relative;
+		&::before, {
+			position: absolute;
+			content: "|";
+			color:#fff;
+			left: 2%;
+		}
+	}
 }
 
 .safePlayList li p, .safePlayList li i, .safePlayList button {
@@ -35,16 +47,6 @@
 .trName{
 	font-weight: 700;
 	font-style:italic;
-}
-
-.alName, .arName{
-	position: relative;
-	&::before, {
-		position: absolute;
-		content: "|";
-		color:#fff;
-		left: 2%;
-	}
 }
 
 .removeButton{
