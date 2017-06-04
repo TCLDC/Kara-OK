@@ -12,8 +12,8 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		background-color: rgba(0, 0, 0, 0.3);
-		z-index: 0;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: 0f;
 	}
 	h2{
 		color:$mainIdentityColor;
@@ -78,8 +78,8 @@
 	font-family: $bodyFont; 
 	font-weight: 700;
 	line-height: 1rem;
-	width: 20px;
-	height: 20px;
+	width: 40px;
+	height: 40px;
 	right: 2%;
 	top:50%;
 	transform: translateY(-50%);
@@ -88,6 +88,7 @@
 	background-color: $mainIdentityColor; 
 	color:#fff;
 	margin-top: 0;
+	padding: 0;
 }
 
 footer{
