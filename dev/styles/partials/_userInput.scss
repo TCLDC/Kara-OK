@@ -22,7 +22,7 @@
 }
 
 .formContainer {
-	border: 5px solid #004E7B;
+	border: 5px solid $alternateIdentityColor;
 	border-radius: 10px;
 	text-align: center;
 	margin-bottom: 5%;
@@ -32,7 +32,7 @@
 .firstSearchBox, .secondSearchBox {
 	float: left;
 	display: inline-block;
-	width: calc(50% - 25px);
+	width: calc(50% - 20px);
 	padding: 40px 50px;
 	border: 5px solid $secondaryIdentityColor;
 	border-radius: 10px;
@@ -40,9 +40,8 @@
 	height: 250px;
 	input {
 		padding: 10px;
-		// background-color: rgba(101,197,223, 0.4);
 		color: $alternateIdentityColor;
-		border: 2px solid $alternateIdentityColor;
+		border: 2px solid $$secondaryIdentityColor;
 		border-radius: 5px;
 		width: 90%;
 		&:focus {
@@ -81,8 +80,13 @@
 	padding: 25px 40px;
 	border: 3px solid $alternateIdentityColor;
 	border-radius: 10px;
+	// box-shadow: 10px 10px 5px $secondaryIdentityColor;
 	font-size: 16px;
 	color: white;
 	text-transform: uppercase;
-
+	// transition-duration: 0.7s;
+	transition: all 1.5s;
+	&:hover {
+		background-color: $alternateIdentityColor;
+	}
 }
