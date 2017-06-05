@@ -1,6 +1,6 @@
 .firebasePlaylist{
 	position: relative;
-	background: url(../../assets/jeff-sheldon-3225.jpg);
+	background: url(../../assets/playlist.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -12,8 +12,8 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		background-color: rgba(0, 0, 0, 0.3);
-		z-index: 0;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: 0f;
 	}
 	h2{
 		color:$mainIdentityColor;
@@ -26,17 +26,23 @@
 }
 
 .fa-music{
-	padding-left:4%;
+	padding: 0 2% 0 4%;
 	color: $mainIdentityColor; 
 }
 
 .safePlayList{
 	list-style:none;
 	padding: 0;
-	border: 3px solid $alternateIdentityColor; /*$alternateIdentityColor*/
+	border: 3px solid $alternateIdentityColor; 
 	border-radius: 10px;
 	background: rgba(255,255,255,0.3);
 	padding: 4%;
+	color: #fff;
+	text-align: left;
+	 .trName, .arName, {
+		font-size: 1.4rem;
+		letter-spacing: .1rem;
+	}
 	.alName, .arName{
 		position: relative;
 		padding: 0 4%;
@@ -44,35 +50,38 @@
 			position: absolute;
 			content: "|";
 			color:#fff;
-			left: 2%;
+			left: 1%;
 		}
+	}
+	.trName{
+		font-weight: 700;
+		font-style:italic;
+		margin-right: 1%;
+	}
+	.trName{
+		width: 20%;
+	}
+	.arName{
+		width: 30%;
+	}
+	.alName{
+		width: 40%;
+		font-size: 1.4rem;
 	}
 }
 
 .safePlayList li p, .safePlayList li i, .safePlayList button {
 	display: inline-block;
-	text-align: center;
 }
 
 .safePlayList li{
 	position: relative;
-	padding: 2%;
-	border: 3px solid #004E7B; /*$alternateIdentityColor*/
+	padding: 1%;
+	border: 3px solid $alternateIdentityColor; 
 	border-radius: 10px;
 	margin-bottom: 5px;
-	background-color: rgb(101,197,223);
+	background-color: $secondaryIdentityColor;
 }
-
-.alName, .arName, .trName{
-	color: #fff;
-	letter-spacing: .1rem;
-}
-
-.trName{
-	font-weight: 700;
-	font-style:italic;
-}
-
 .removeButton{
 	position: absolute;
 	font-family: $bodyFont; 
@@ -88,14 +97,26 @@
 	background-color: $mainIdentityColor; 
 	color:#fff;
 	margin-top: 0;
+	padding: 0;
+}
+
+
+.firebasePlaylist .wrapper{
+	text-align: center;
+	#backToSearchFromPL{
+	display: inline-block;
+	margin-bottom: 40px;
+	}
 }
 
 footer{
+	margin-top: 50%;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
+
 }
 
 /* Portrait tablet and small desktops */
@@ -108,4 +129,13 @@ footer{
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+
+	color:#fff;
+	a{
+		color: $mainIdentityColor;
+		text-decoration: none;
+		&:hover{
+			color:$secondaryIdentityColor;
+		}
+	}
 }
