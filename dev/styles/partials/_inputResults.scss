@@ -22,10 +22,16 @@
 		z-index: 0;
 	}
 	h2 {
-		font-size: 80px;
+		font-size: 8rem;
 		font-family: $titleFont;
 		text-align: center;
 		color: $mainIdentityColor;
+		@media (max-width: 940px){
+			font-size: 6rem;
+		}
+		@media (max-width: 768px){
+			font-size: 4rem;
+		}
 	}
 	.resultsWrapper {
 		// border: 5px solid $alternateIdentityColor;
@@ -134,8 +140,8 @@
 	cursor: pointer;
 	position: relative;
 	padding: 10px;
-	border: 3px solid #004E7B; /*$alternateIdentityColor*/
+	border: 3px solid $alternateIdentityColor; 
 	border-radius: 10px;
 	margin-bottom: 5px;
-	background-color: rgb(101,197,223);
+	background-color: $secondaryIdentityColor;
 }
