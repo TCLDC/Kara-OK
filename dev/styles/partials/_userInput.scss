@@ -108,28 +108,14 @@
 	color: white;
 	text-transform: uppercase;
 	transition: all 1.5s;
+	@media (max-width: 768px) {
+		margin-top: 15px;
+		padding: 15px 30px;
+	}
 	&:hover {
 		background-color: $alternateIdentityColor;
 	}
 	&:active {
 		border: none;
 	}
-}
-
-/* Portrait tablet and small desktops */
-@media (max-width: 940px) {
-}
-
-/* Landscape phone to portrait tablet */
-@media (max-width: 768px) {
-}
-
-/* Landscape phones and down */
-@media (max-width: 480px) {
-
-	@media (max-width: 768px) {
-		margin-top: 15px;
-		padding: 15px 30px;
-	}
-
 }
