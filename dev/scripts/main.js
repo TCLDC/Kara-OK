@@ -43,6 +43,9 @@ karaOK.eventHandlers = function () {
 	$('#backToSearch').on('click', function(){
 		$.fn.fullpage.moveTo(2);
 		$(".modalNo").removeClass("modalDisplay");
+		$(".trackName").val("");
+		$(".artistName").val("");
+		$(".lyricsName").val("");
 	})	
 
 	// 1. Receive user input.
@@ -111,6 +114,13 @@ karaOK.eventHandlers = function () {
 		console.log(safeListRemoveData);
 		const playlistEntry = firebase.database().ref(`/playlist/${safeListRemoveData}`);
 		playlistEntry.remove();
+	});
+
+	$("#backToSearchFromPL").on('click', function(){
+		$.fn.fullpage.moveTo(2);
+		$(".trackName").val("");
+		$(".artistName").val("");
+		$(".lyricsName").val("");
 	});
 }
 // 2. Use user input to make API request/AJAX request.
