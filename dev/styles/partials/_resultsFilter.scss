@@ -1,26 +1,11 @@
 // RESULTS
-// .resultsFilter * {
-// 	position: relative;
-// 	z-index: 1;
-// }
+
 
 .resultsFilter {
-	background-image: url(../../../assets/lukas-budimaier-83358.jpg);
+	background-image: url(../../assets/results.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	// position: relative;
-	// z-index: -1;
-	// &:after {
-	// 	content: '';
-	// 	position: absolute;
-	// 	top: 0;
-	// 	bottom: 0;
-	// 	left: 0;
-	// 	right: 0;
-	// 	background-color: rgba(0, 0, 0, 0.25);
-	// 	z-index: 0;
-	// }
 }
 
 .modal {
@@ -66,7 +51,6 @@
 		transform: translateY(-50%);
 		color:rgba(178,34,34,.8);
 	}
-
 
 .modalDisplay {
 	display: block;
