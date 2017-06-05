@@ -27,6 +27,12 @@
 	text-align: center;
 	margin-bottom: 5%;
 	padding: 50px;
+	@media (max-width: 768px) {
+		border: 0 solid $alternateIdentityColor;
+		margin-bottom: 10px;
+		text-align: center;
+		padding: 20px;
+	}
 }
 
 .firstSearchBox, .secondSearchBox {
@@ -61,6 +67,12 @@
 	margin-right: 50px;
 	@media (max-width: 768px) {
 		margin-right: 0;
+	}
+}
+
+.secondSearchBox {
+	@media (max-width: 768px) {
+		height: auto;
 	}
 }
 
