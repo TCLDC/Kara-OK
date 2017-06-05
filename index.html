@@ -70,14 +70,20 @@
 		<section class="section resultsFilter" data-anchor="slide4">
 				<div class="wrapper">
 					<div class="modal modalYes"><!--yes it's explicit-->
-						<i class="fa fa-check-square-o" aria-hidden="true"></i>
-						<h2>Kara OK</h2>
+						<div class="infoBox clearfix">
+							<h2>Kara OK</h2>
+							<p class="resultsMessage">This song is free of explicit content</p>
+							<i class="fa fa-check-square-o" aria-hidden="true"></i>
+						</div>
 						<button class="resultsButton" id="addToPlaylist">Add to OK List</button>
 					</div>
 					<div class="modal modalNo"><!--No it's SFW-->
-						<h2>Kara NO-K</h2>
-						<i class="icofont icofont-exclamation-square"></i>
-						<button class="resultsButton" id="backToSearch">That song's lyrics are not Ok.</button>
+						<div class="infoBox clearfix">
+							<h2>Kara NO-K</h2>
+							<p class="resultsMessage">This song's lyrics are not Ok.</p>
+							<i class="fa fa-window-close"></i>
+						</div>
+						<button class="resultsButton" id="backToSearch">Back To Search</button>
 					</div>
 				</div>
 		</section>
