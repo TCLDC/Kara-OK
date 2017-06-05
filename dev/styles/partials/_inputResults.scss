@@ -117,12 +117,21 @@
 		font-style:italic;
 		margin-right: 2%;
 		width: calc(45% - 25px);
+		@media (max-width: 768px) {
+			width: 45%;
+		}
 	}
 	.arName{
 		width: 20%;
+		@media (max-width: 768px) {
+			width: 45%;
+		}
 	}
 	.alName{
 		width: 25%;
+		@media (max-width: 768px) {
+			display: none;
+		}
 	}
 	i {
 		margin-right: 5px;
