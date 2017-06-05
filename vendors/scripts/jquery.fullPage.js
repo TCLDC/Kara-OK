@@ -126,7 +126,7 @@
             //scrolling
             css3: true,
             scrollingSpeed: 1000,
-            autoScrolling: true,
+            autoScrolling: false,
             fitToSection: true,
             fitToSectionDelay: 1000,
             easing: 'easeInOutCubic',
