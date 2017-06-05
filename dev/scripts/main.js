@@ -58,7 +58,6 @@ karaOK.eventHandlers = function () {
 		var userLyricsName = $('.lyricsName').val();
 
 		karaOK.getSongInfo(userTrackName, userArtistName, userLyricsName);
-	// console.log(userArtistName);
 	});
 
 	// 5. Receive user selection.
@@ -111,7 +110,6 @@ karaOK.eventHandlers = function () {
 
 	$('.safePlayList').on('click', '.removeButton', function() {
 		var safeListRemoveData = $(this).parent('.playListItem').data('firebaseId');
-		console.log(safeListRemoveData);
 		const playlistEntry = firebase.database().ref(`/playlist/${safeListRemoveData}`);
 		playlistEntry.remove();
 	});
@@ -142,8 +140,6 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 		}
 	}).then(function (result){
 		// 4. Display API request results on screen
-		// 	(track_id, track_name, explicit, album_name, artist_name, album_coverart_100x100, track_share_url)
-		// console.log(result);
 		var trackList = result.message.body.track_list
 
 		if (trackList.length === 0) {
@@ -163,8 +159,6 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 				var trackNameContent = track.track.track_name.substring(0, 55);
 				var trackName = $('<p>').text(trackNameContent).addClass('trName');
 				var trackId = track.track.track_id;
-
-				console.log(track.track.album_coverart_100x100);
 
 				galleryUnit.data('track-id', trackId);
 				galleryUnit.append(randomIcon, trackName, artistName, albumName);
@@ -191,19 +185,15 @@ karaOK.getLyrics = function (trackId) {
 			format: 'jsonp'
 		}
 	}).then(function(result){
-		// console.log(result);
 		// 7. Use javascript filter to scan the lyrics for profanity.
 		// 7a. Get lyrics from the Musixmatch API
 		var lyrics = result.message.body.lyrics.lyrics_body;
-		// console.log(lyrics);
 
 		// 7b. API only returns 30% of lyrics ergo we need to use the explicit number to determine if song is explicit (double verification)
 		var explicitRating = result.message.body.lyrics.explicit;
-		// console.log(explicitRating);
 		
 		var filterSwear = '';
 		var filterSwear = filter.contains(lyrics);
-		console.log(filterSwear);
 
 		// 8. IF there is profanity OR explicit rating is 1 then display negative + feedback
 		if (filterSwear === true || explicitRating === 1) {
