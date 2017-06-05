@@ -13,6 +13,9 @@
 	text-align: center;
 	.resultsButton {
 		display: inline-block;
+		color:$alternateIdentityColor;
+		font-weight: 500;
+		background-color:rgba(255,255,255,0.2);
 	}
 }
 
@@ -27,11 +30,19 @@
 		top:50%;
 		transform: translateY(-50%);
 		color:$mainIdentityColor;
+		@media (max-width: 768px) {
+			font-size: 2rem;
+		}
 	}
 	.resultsMessage{
 		display: inline-block;
 		color:#fff;
 		text-align: left;
+		@media (max-width: 768px) {
+			display: block;
+			margin-top: 80px;
+			text-shadow:2px 2px 5px #000;
+		}
 	}
 	.fa-check-square-o,{
 		position: absolute;
