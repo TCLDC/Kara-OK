@@ -57,8 +57,6 @@
 		font-weight: 700;
 		font-style:italic;
 		margin-right: 1%;
-	}
-	.trName{
 		width: 20%;
 		@media (max-width: 768px) {
 			width: 42%;
@@ -125,20 +123,6 @@ footer{
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
-
-}
-
-/* Portrait tablet and small desktops */
-@media (max-width: 940px) {
-}
-
-/* Landscape phone to portrait tablet */
-@media (max-width: 768px) {
-}
-
-/* Landscape phones and down */
-@media (max-width: 480px) {
-
 	color:#fff;
 	a{
 		color: $mainIdentityColor;
@@ -148,3 +132,5 @@ footer{
 		}
 	}
 }
+
+	
