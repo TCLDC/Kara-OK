@@ -20,6 +20,8 @@ const playlistRef = firebase.database().ref('/playlist');
 //bad language filter
 var filter = new BadLanguageFilter();
 
+const iconArray = ['fa-bell', 'fa-headphones', 'fa-rocket', 'fa-tree', 'fa-trophy', 'fa-volume-up', 'fa-hand-spock-o']
+
 karaOK.init = function() {
 	karaOK.eventHandlers();
 	karaOK.fullPage();
@@ -40,6 +42,10 @@ karaOK.eventHandlers = function () {
 	// on KARA NO-K (Explicit content) user clicks to return to search
 	$('#backToSearch').on('click', function(){
 		$.fn.fullpage.moveTo(2);
+		$(".modalNo").removeClass("modalDisplay");
+		$(".trackName").val("");
+		$(".artistName").val("");
+		$(".lyricsName").val("");
 	})	
 
 	// 1. Receive user input.
@@ -52,7 +58,6 @@ karaOK.eventHandlers = function () {
 		var userLyricsName = $('.lyricsName').val();
 
 		karaOK.getSongInfo(userTrackName, userArtistName, userLyricsName);
-	// console.log(userArtistName);
 	});
 
 	// 5. Receive user selection.
@@ -68,7 +73,7 @@ karaOK.eventHandlers = function () {
 	});
 
 	$("#addToPlaylist").on("click", function(){
-		
+		$(".modalYes").removeClass("modalDisplay");
 		// Move the li add to DOM section to for loop so list is created from firebase
 		var safeListItem = {
 			safeListAlbum: karaOK.selectedAlbumName,
@@ -86,14 +91,14 @@ karaOK.eventHandlers = function () {
 			//creates playlist
 			for (let key in playlist) {
 
-				// var playListIcon = ("<i>").text("").addClass("fa-music");
-				// Is this the right way to add the icon if we also put thevar name down in the playListItem? I tried and it didn't work
+				var playListIcon = $("<i>").addClass("fa").addClass("fa-music");
+				// Is this the right way to add the icon if we also put the var name down in the playListItem? I tried and it didn't work
 				var playlistAlbum = $("<p>").text(playlist[key].safeListAlbum).addClass('alName');
 				var playlistArtist = $("<p>").text(playlist[key].safelistArtist).addClass('arName'); 
 				var playlistTrack = $("<p>").text(playlist[key].safeListTrack).addClass('trName');
 				var removePlaylistItem = $("<button>").addClass('removeButton').text('x');
 
-				var playListItem = $("<li>").append(playlistTrack, playlistArtist, playlistAlbum, removePlaylistItem).addClass('playListItem');
+				var playListItem = $("<li>").append(playListIcon, playlistTrack, playlistArtist, playlistAlbum, removePlaylistItem).addClass('playListItem');
 				
 				playListItem = playListItem.data('firebaseId', key);
 				$(".safePlayList").append(playListItem);
@@ -105,9 +110,15 @@ karaOK.eventHandlers = function () {
 
 	$('.safePlayList').on('click', '.removeButton', function() {
 		var safeListRemoveData = $(this).parent('.playListItem').data('firebaseId');
-		console.log(safeListRemoveData);
 		const playlistEntry = firebase.database().ref(`/playlist/${safeListRemoveData}`);
 		playlistEntry.remove();
+	});
+
+	$("#backToSearchFromPL").on('click', function(){
+		$.fn.fullpage.moveTo(2);
+		$(".trackName").val("");
+		$(".artistName").val("");
+		$(".lyricsName").val("");
 	});
 }
 // 2. Use user input to make API request/AJAX request.
@@ -129,8 +140,6 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 		}
 	}).then(function (result){
 		// 4. Display API request results on screen
-		// 	(track_id, track_name, explicit, album_name, artist_name, album_coverart_100x100, track_share_url)
-		// console.log(result);
 		var trackList = result.message.body.track_list
 
 		if (trackList.length === 0) {
@@ -141,21 +150,29 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 
 				var galleryUnit = $('<li>').addClass('galleryUnit');
 
-				var coverArt = $('<img>').attr('src', track.track.album_coverart_100x100);
-				var albumName = $('<p>').text(track.track.album_name).addClass('alName');
+				var randomIconClass = karaOK.pickRandomIcon();
+				var randomIcon = $('<i>').addClass('fa').addClass(randomIconClass);
+				// var coverArt = $('<img>').attr('src', track.track.album_coverart_100x100);
+				var albumNameContent = track.track.album_name.substring(0,22);
+				var albumName = $('<p>').text(albumNameContent).addClass('alName');
 				var artistName = $('<p>').text(track.track.artist_name).addClass('arName');
-				var trackName = $('<p>').text(track.track.track_name).addClass('trName');
+				var trackNameContent = track.track.track_name.substring(0, 55);
+				var trackName = $('<p>').text(trackNameContent).addClass('trName');
 				var trackId = track.track.track_id;
 
-				console.log(track.track.album_coverart_100x100);
-
 				galleryUnit.data('track-id', trackId);
-				galleryUnit.append(coverArt, trackName, artistName, albumName);
+				galleryUnit.append(randomIcon, trackName, artistName, albumName);
 				$('.songGallery').append(galleryUnit);
 			});
 		}
 	});
 }
+
+karaOK.pickRandomIcon = function () {
+	var randIndex = Math.floor(Math.random() * iconArray.length);
+	return iconArray[randIndex];
+}
+
 // 6. Make API request to track.lyrics.get, 
 karaOK.getLyrics = function (trackId) {
 	$.ajax({
@@ -168,19 +185,15 @@ karaOK.getLyrics = function (trackId) {
 			format: 'jsonp'
 		}
 	}).then(function(result){
-		// console.log(result);
 		// 7. Use javascript filter to scan the lyrics for profanity.
 		// 7a. Get lyrics from the Musixmatch API
 		var lyrics = result.message.body.lyrics.lyrics_body;
-		// console.log(lyrics);
 
 		// 7b. API only returns 30% of lyrics ergo we need to use the explicit number to determine if song is explicit (double verification)
 		var explicitRating = result.message.body.lyrics.explicit;
-		// console.log(explicitRating);
 		
 		var filterSwear = '';
 		var filterSwear = filter.contains(lyrics);
-		console.log(filterSwear);
 
 		// 8. IF there is profanity OR explicit rating is 1 then display negative + feedback
 		if (filterSwear === true || explicitRating === 1) {

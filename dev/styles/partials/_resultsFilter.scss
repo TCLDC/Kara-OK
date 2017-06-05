@@ -1,37 +1,67 @@
 // RESULTS
 
+
 .resultsFilter {
-	background-image: url(../../../assets/lukas-budimaier-83358.jpg);
+	background-image: url(../../assets/results.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
-.results {
-	background-color: $alternateIdentityColor;
-}
-
 .modal {
 	display: none;
-	position: absolute;
-	top: 20%;
-	bottom: 20%;
-	left: 20%;
-	right: 20%;	
 	text-align: center;
 	.resultsButton {
 		display: inline-block;
+		color:$alternateIdentityColor;
+		font-weight: 500;
+		background-color:rgba(255,255,255,0.2);
 	}
 }
 
-.modalYes{
-	background-color: forestgreen;
-	
+.infoBox {
+	position: relative;
+	background-color: rgba(255,255,255,0.25);
+	border: 5px solid $secondaryIdentityColor;
+	padding: 40px 60px;
+	h2{
+		position: absolute;
+		left: 20px;
+		top:50%;
+		transform: translateY(-50%);
+		color:$mainIdentityColor;
+		@media (max-width: 768px) {
+			font-size: 2rem;
+		}
+	}
+	.resultsMessage{
+		display: inline-block;
+		color:#fff;
+		text-align: left;
+		@media (max-width: 768px) {
+			display: block;
+			margin-top: 80px;
+			text-shadow:2px 2px 5px #000;
+		}
+	}
+	.fa-check-square-o,{
+		position: absolute;
+		right: 20px;
+		top:50%;
+		transform: translateY(-50%);
+		color:palegreen;
+		font-size: 5rem;
+	}
 }
 
-.modalNo{
-	background-color: firebrick;
-}
+.fa.fa-window-close{
+		position: absolute;
+		font-size: 5rem;
+		right: 20px;
+		top:50%;
+		transform: translateY(-50%);
+		color:rgba(178,34,34,.8);
+	}
 
 .modalDisplay {
 	display: block;
