@@ -79,32 +79,10 @@ svg {
 	cursor: pointer;
 	margin-top: 8%;
 	text-align: center;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0360cee3bae0fd1c7fcb41742b63e0fd6fca3698
 }
 
-/* Portrait tablet and small desktops */
-@media (max-width: 940px) {
-}
 
-/* Landscape phone to portrait tablet */
-@media (max-width: 768px) {
-}
-
-/* Landscape phones and down */
-@media (max-width: 480px) {
-=======
-=======
->>>>>>> e106f5507f5f005833abd19e9bb6ad03c7dd25eb
-	@media (max-width: 768px){
-		color:$mainIdentityColor;
-		text-shadow:2px 2px 10px #000;
-	}
-<<<<<<< HEAD
->>>>>>> 077e13c4697de23ad8f4553a86a8bff6385a863d
-=======
->>>>>>> 0360cee3bae0fd1c7fcb41742b63e0fd6fca3698
+@media (max-width: 768px){
+	color:$mainIdentityColor;
+	text-shadow:2px 2px 10px #000;
 }
