@@ -128,7 +128,7 @@ karaOK.eventHandlers = function () {
 // 3. Filter the results (ie search by lyrics only, language, format etc)
 karaOK.getSongInfo = function (track, artist, lyrics) {
 	$.ajax({
-		url: 'http://api.musixmatch.com/ws/1.1/track.search',
+		url: 'https://api.musixmatch.com/ws/1.1/track.search',
 		method: 'GET',
 		dataType: 'jsonp',
 		data: {
@@ -179,7 +179,7 @@ karaOK.pickRandomIcon = function () {
 // 6. Make API request to track.lyrics.get, 
 karaOK.getLyrics = function (trackId) {
 	$.ajax({
-		url: 'http://api.musixmatch.com/ws/1.1/track.lyrics.get',
+		url: 'https://api.musixmatch.com/ws/1.1/track.lyrics.get',
 		method: 'GET',
 		dataType: 'jsonp',
 		data: {
