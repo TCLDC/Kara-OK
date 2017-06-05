@@ -26,7 +26,7 @@
 	border-radius: 10px;
 	text-align: center;
 	margin-bottom: 5%;
-	padding: 50px;
+  padding: 30px;
 	@media (max-width: 768px) {
 		border: 0 solid $alternateIdentityColor;
 		margin-bottom: 10px;
@@ -40,7 +40,7 @@
 	display: inline-block;
 	width: calc(50% - 25px);
 	padding: 40px 50px;
-	border: 5px solid $secondaryIdentityColor;
+	border: 5px solid $alternateIdentityColor;
 	border-radius: 10px;
 	background-color: rgba(255,255,255, 0.25);
 	height: 250px;
@@ -71,9 +71,13 @@
 }
 
 .secondSearchBox {
+  padding-top: 6.5%;
 	@media (max-width: 768px) {
 		height: auto;
 	}
+
+	
+
 }
 
 .inputBox {
@@ -99,12 +103,14 @@
 	padding: 25px 40px;
 	border: 3px solid $alternateIdentityColor;
 	border-radius: 10px;
-	// box-shadow: 10px 10px 5px $secondaryIdentityColor;
 	font-size: 16px;
 	color: white;
 	text-transform: uppercase;
 	transition: all 1.5s;
 	&:hover {
 		background-color: $alternateIdentityColor;
+	}
+	&:active {
+		border: none;
 	}
 }
