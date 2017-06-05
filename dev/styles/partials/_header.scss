@@ -28,6 +28,10 @@ svg {
 		}
 	}
 	h2 {
+		@media (max-width: 768px){
+			color:$mainIdentityColor;
+			text-shadow:2px 2px 10px #000;
+		}
 		@media (max-width: 480px){
 			text-shadow:2px 2px 10px #000;
 		}
@@ -79,10 +83,4 @@ svg {
 	cursor: pointer;
 	margin-top: 8%;
 	text-align: center;
-}
-
-
-@media (max-width: 768px){
-	color:$mainIdentityColor;
-	text-shadow:2px 2px 10px #000;
 }
