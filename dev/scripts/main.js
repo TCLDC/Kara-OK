@@ -29,8 +29,10 @@ karaOK.init = function() {
 
 karaOK.fullPage = function() {
 	$('#fullpage').fullpage({
+		
 	});
-	$.fn.fullpage.setAllowScrolling(false);
+		$.fn.fullpage.setMouseWheelScrolling(false);
+		$.fn.fullpage.setAllowScrolling(false);
 }
 
 karaOK.eventHandlers = function () {
