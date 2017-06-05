@@ -117,12 +117,21 @@
 		font-style:italic;
 		margin-right: 2%;
 		width: calc(45% - 25px);
+		@media (max-width: 768px) {
+			width: 45%;
+		}
 	}
 	.arName{
 		width: 20%;
+		@media (max-width: 768px) {
+			width: 45%;
+		}
 	}
 	.alName{
 		width: 25%;
+		@media (max-width: 768px) {
+			display: none;
+		}
 	}
 	i {
 		margin-right: 5px;
@@ -130,6 +139,17 @@
 		color: $mainIdentityColor;
 	}
 }
+
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
 
 .songGallery li p, .songGallery li i, .songGallery button {
 	display: inline-block;
@@ -144,4 +164,5 @@
 	border-radius: 10px;
 	margin-bottom: 5px;
 	background-color: $secondaryIdentityColor;
+
 }
