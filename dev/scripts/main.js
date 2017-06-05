@@ -20,6 +20,8 @@ const playlistRef = firebase.database().ref('/playlist');
 //bad language filter
 var filter = new BadLanguageFilter();
 
+const iconArray = ['fa-bell', 'fa-headphones', 'fa-rocket', 'fa-tree', 'fa-trophy', 'fa-volume-up', 'fa-hand-spock-o']
+
 karaOK.init = function() {
 	karaOK.eventHandlers();
 	karaOK.fullPage();
@@ -142,21 +144,31 @@ karaOK.getSongInfo = function (track, artist, lyrics) {
 
 				var galleryUnit = $('<li>').addClass('galleryUnit');
 
-				var coverArt = $('<img>').attr('src', track.track.album_coverart_100x100);
-				var albumName = $('<p>').text(track.track.album_name).addClass('alName');
+				var randomIconClass = karaOK.pickRandomIcon();
+				var randomIcon = $('<i>').addClass('fa').addClass(randomIconClass);
+				// var coverArt = $('<img>').attr('src', track.track.album_coverart_100x100);
+				var albumNameContent = track.track.album_name.substring(0,22);
+				var albumName = $('<p>').text(albumNameContent).addClass('alName');
 				var artistName = $('<p>').text(track.track.artist_name).addClass('arName');
-				var trackName = $('<p>').text(track.track.track_name).addClass('trName');
+				var trackNameContent = track.track.track_name.substring(0, 55);
+				var trackName = $('<p>').text(trackNameContent).addClass('trName');
 				var trackId = track.track.track_id;
 
 				console.log(track.track.album_coverart_100x100);
 
 				galleryUnit.data('track-id', trackId);
-				galleryUnit.append(coverArt, trackName, artistName, albumName);
+				galleryUnit.append(randomIcon, trackName, artistName, albumName);
 				$('.songGallery').append(galleryUnit);
 			});
 		}
 	});
 }
+
+karaOK.pickRandomIcon = function () {
+	var randIndex = Math.floor(Math.random() * iconArray.length);
+	return iconArray[randIndex];
+}
+
 // 6. Make API request to track.lyrics.get, 
 karaOK.getLyrics = function (trackId) {
 	$.ajax({
