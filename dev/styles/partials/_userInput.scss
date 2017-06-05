@@ -54,6 +54,9 @@
 		border: 2px solid $secondaryIdentityColor;
 		border-radius: 5px;
 		width: 90%;
+		@media (max-width: 768px) {
+			font-size: 1.4rem;
+		}
 		&:focus {
 			outline: none;
 		}
@@ -75,8 +78,6 @@
 	@media (max-width: 768px) {
 		height: auto;
 	}
-
-	
 
 }
 
@@ -112,5 +113,9 @@
 	}
 	&:active {
 		border: none;
+	}
+	@media (max-width: 768px) {
+		margin-top: 15px;
+		padding: 15px 30px;
 	}
 }

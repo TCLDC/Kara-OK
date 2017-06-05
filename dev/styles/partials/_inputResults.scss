@@ -22,10 +22,16 @@
 		z-index: 0;
 	}
 	h2 {
-		font-size: 80px;
+		font-size: 8rem;
 		font-family: $titleFont;
 		text-align: center;
 		color: $mainIdentityColor;
+		@media (max-width: 940px){
+			font-size: 6rem;
+		}
+		@media (max-width: 768px){
+			font-size: 4rem;
+		}
 	}
 	.resultsWrapper {
 		// border: 5px solid $alternateIdentityColor;

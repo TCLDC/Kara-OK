@@ -60,7 +60,7 @@ svg {
 
 .iconHolder {	
 	text-align: center;
-	@media (max-width: 480px){
+	@media (max-width: 768px){
 		margin:0 auto;
 		margin-top: 200px;
 		width: 60px;
@@ -68,15 +68,17 @@ svg {
 		border-radius: 50%;
 		border: 1px solid #fff;
 	}
+	@media (max-width: 480px){
+		margin-top: 150px;
+	}
 }
 
 .fa-angle-down{
-
 	color: white;
 	cursor: pointer;
 	margin-top: 8%;
 	text-align: center;
-	@media (max-width: 480px){
+	@media (max-width: 768px){
 		color:$mainIdentityColor;
 		text-shadow:2px 2px 10px #000;
 	}
