@@ -131,6 +131,17 @@
 	}
 }
 
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
 .songGallery li p, .songGallery li i, .songGallery button {
 	display: inline-block;
 	text-align: center;
@@ -144,4 +155,5 @@
 	border-radius: 10px;
 	margin-bottom: 5px;
 	background-color: $secondaryIdentityColor;
+
 }
